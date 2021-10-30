@@ -4,7 +4,7 @@
 " URL: https://github.com/prdx23/asteroid.vim
 " Author: prdx23
 " License: MIT
-" Last Change: 2021/10/30 05:44
+" Last Change: 2021/10/30 06:00
 " ===============================================================
 
 set background=dark
@@ -162,6 +162,15 @@ hi GitGutterAdd guifg=#9ed072 ctermfg=149 guibg=NONE ctermbg=NONE gui=NONE cterm
 hi GitGutterChange guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitGutterDelete guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitGutterChangeDelete guifg=#e7c664 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link yamlTagHandle Identifier
+hi link yamlTagPrefix Identifier
+hi link yamlReservedDirective SpellBad
+hi link yamlBlockMappingKey Function
+hi link yamlFlowMappingKey Function
+hi link yamlKeyValueDelimiter Operator
+hi link yamlNull BuiltIn
+hi link yamlBool Boolean
+hi link yamlTimestamp Operator
 hi YcmErrorSign guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi YcmWarningSign guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi YcmErrorSection guifg=#181819 ctermfg=234 guibg=#fc5d7c ctermbg=204 gui=NONE cterm=NONE
