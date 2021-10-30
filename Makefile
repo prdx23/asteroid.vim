@@ -7,5 +7,5 @@ test:
 
 render:
 	estilo render
-	cp colors/turtle.vim ~/.vim/colors
+	cp colors/* ~/.vim/colors
 	echo 'Copied to .vim/colors'

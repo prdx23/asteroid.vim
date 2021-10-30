@@ -1,10 +1,10 @@
 " ===============================================================
-" turtle
+" asteroid
 " 
-" URL: 
+" URL: https://github.com/prdx23/asteroid.vim
 " Author: prdx23
 " License: MIT
-" Last Change: 2021/10/30 05:38
+" Last Change: 2021/10/30 05:44
 " ===============================================================
 
 set background=dark
@@ -12,21 +12,21 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name="turtle"
+let g:colors_name="asteroid"
 
 
 let Italic = ""
-if exists('g:turtle_italic')
+if exists('g:asteroid_italic')
   let Italic = "italic"
 endif
-let g:turtle_italic = get(g:, 'turtle_italic', 0)
+let g:asteroid_italic = get(g:, 'asteroid_italic', 0)
 
 let Bold = ""
-if exists('g:turtle_bold')
+if exists('g:asteroid_bold')
   let Bold = "bold"
 endif
 
-let g:turtle_bold = get(g:, 'turtle_bold', 0)
+let g:asteroid_bold = get(g:, 'asteroid_bold', 0)
 hi ALEError guifg=#181819 ctermfg=234 guibg=#fc5d7c ctermbg=204 gui=NONE cterm=NONE
 hi ALEWarning guifg=#181819 ctermfg=234 guibg=#f39660 ctermbg=209 gui=NONE cterm=NONE
 hi ALEInfo guifg=#181819 ctermfg=234 guibg=#7eb2dd ctermbg=110 gui=NONE cterm=NONE

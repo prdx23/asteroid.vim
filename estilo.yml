@@ -1,10 +1,10 @@
-name: 'turtle'
+name: 'asteroid'
 version: '0.1.0'
 license: 'MIT'
 author: 'prdx23'
-url: ''
+url: 'https://github.com/prdx23/asteroid.vim'
 description: ''
 colorschemes:
-  - name: turtle
+  - name: asteroid
     background: 'dark'
-    palette: turtle
+    palette: asteroid
