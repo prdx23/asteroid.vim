@@ -26,7 +26,7 @@ Search: 'bg yellow'
 LineNr: 'light1 dark0'
 CursorLineNr: 'light2'
 MatchParen: 'bg lightblue'
-ModeMsg: ''
+ModeMsg: 'cyan'
 MoreMsg: 'green'
 NonText: 'light1'
 
@@ -39,9 +39,9 @@ Question: 'orange'
 SpecialKey: 'purple'
 
 SpellBad: 'red . u'
-SpellLocal: 'orange'
-SpellCap: 'yellow'
-SpellRare: 'lightblue'
+SpellLocal: 'orange . u'
+SpellCap: 'yellow . u'
+SpellRare: 'lightblue . u'
 
 StatusLine: 'light2 dark0'
 StatusLineNC: 'light2 dark1'
@@ -59,7 +59,7 @@ WildMenu: 'bg lightblue'
 # BASE SYNTAX
 Comment: 'light2'
 Builtin: 'cyan'
-Noise: 'light2'
+Noise: 'light3'
 
 Constant: 'purple'
 String: 'yellow' # Constant
@@ -74,7 +74,7 @@ Function: 'lightblue' # Identifier
 Statement: 'red'
 Conditional: '@Statement' # Statement
 Repeat: '@Statement' # Statement
-Label: 'purple' # Statement
+Label: '@Statement' # Statement
 Operator: 'orange' # Statement
 Keyword: '@Statement' # Statement
 Exception: '@Operator' # Statement
@@ -93,11 +93,11 @@ Typedef: '@Type' # Type
 Special: 'purple'
 SpecialChar: '@Special' # Special
 Tag: '@Special' # Special
-Delimiter: '@Special' # Special
+Delimiter: '@Operator' # Special
 SpecialComment: '@Special' # Special
-Debug: '@Special' # Special
+Debug: '@Operator' # Special
 
 Underlined: '. . u'
 Ignore: 'light1'
 Error: 'red'
-Todo: 'light3'
+Todo: 'orange'

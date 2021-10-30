@@ -4,7 +4,7 @@
 " URL: 
 " Author: prdx23
 " License: MIT
-" Last Change: 2021/09/07 17:22
+" Last Change: 2021/10/30 05:38
 " ===============================================================
 
 set background=dark
@@ -52,6 +52,7 @@ hi Search guifg=#181819 ctermfg=234 guibg=#e7c664 ctermbg=185 gui=NONE cterm=NON
 hi LineNr guifg=#33353f ctermfg=237 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi CursorLineNr guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=#181819 ctermfg=234 guibg=#7eb2dd ctermbg=110 gui=NONE cterm=NONE
+hi ModeMsg guifg=#56ffff ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MoreMsg guifg=#9ed072 ctermfg=149 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NonText guifg=#33353f ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Pmenu guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
@@ -61,9 +62,9 @@ hi PmenuThumb guibg=#4f5462 ctermbg=240 gui=NONE cterm=NONE
 hi Question guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi SpecialKey guifg=#9c8cc3 ctermfg=139 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi SpellBad guifg=#fc5d7c ctermfg=204 gui=underline cterm=underline
-hi SpellLocal guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi SpellCap guifg=#e7c664 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi SpellRare guifg=#7eb2dd ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi SpellLocal guifg=#f39660 ctermfg=209 gui=underline cterm=underline
+hi SpellCap guifg=#e7c664 ctermfg=185 gui=underline cterm=underline
+hi SpellRare guifg=#7eb2dd ctermfg=110 gui=underline cterm=underline
 hi StatusLine guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineNC guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
 hi Title guifg=#56ffff ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -73,7 +74,7 @@ hi WarningMsg guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=N
 hi WildMenu guifg=#181819 ctermfg=234 guibg=#7eb2dd ctermbg=110 gui=NONE cterm=NONE
 hi Comment guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Builtin guifg=#56ffff ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Noise guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Noise guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Constant guifg=#9c8cc3 ctermfg=139 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi String guifg=#e7c664 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link Character String
@@ -85,7 +86,7 @@ hi Function guifg=#7eb2dd ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NON
 hi Statement guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link Conditional Statement
 hi link Repeat Statement
-hi Label guifg=#9c8cc3 ctermfg=139 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link Label Statement
 hi Operator guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link Keyword Statement
 hi link Exception Operator
@@ -101,13 +102,13 @@ hi link Typedef Type
 hi Special guifg=#9c8cc3 ctermfg=139 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link SpecialChar Special
 hi link Tag Special
-hi link Delimiter Special
+hi link Delimiter Operator
 hi link SpecialComment Special
-hi link Debug Special
+hi link Debug Operator
 hi Underlined gui=underline cterm=underline
 hi Ignore guifg=#33353f ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Error guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Todo guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Todo guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link cssProp Identifier
 hi link cssAttrComma Operator
 hi link cssUnitDecorators Operator
@@ -131,12 +132,26 @@ hi link jsVariableDef Identifier
 hi link jsDestructuringBlock Identifier
 hi link jsDestructuringArray Identifier
 hi link jsModuleKeyword Identifier
+hi link jsonBraces jsonNoise
+hi link jsonNull BuiltIn
+hi link jsonKeyword Function
+hi link jsonKeywordMatch jsonNoise
+hi link jsonError SpellBad
+hi link jsonNumError jsonError
+hi link jsonCommentError jsonError
+hi link jsonSemicolonError jsonError
+hi link jsonTrailingCommaError jsonError
+hi link jsonMissingCommaError jsonError
+hi link jsonStringSQError jsonError
+hi link jsonNoQuotesError jsonError
+hi link jsonTripleQuotesError jsonError
+hi link jsonQuote jsonNoise
 hi link pythonBuiltin Builtin
 hi link pythonDecoratorName pythonDecorator
 hi link pythonFunctionCall pythonFunction
 hi link pythonBuiltInFunc pythonBuiltin
 hi link pythonDottedName pythonDecorator
-hi pythonDot guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link pythonDot Noise
 hi link pythonSingleton Identifier
 hi link sassCssAttribute cssAttr
 hi link sassVariable cssStringQ
