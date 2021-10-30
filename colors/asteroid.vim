@@ -4,7 +4,7 @@
 " URL: https://github.com/prdx23/asteroid.vim
 " Author: prdx23
 " License: MIT
-" Last Change: 2021/10/30 06:00
+" Last Change: 2021/10/30 07:14
 " ===============================================================
 
 set background=dark
@@ -27,6 +27,10 @@ if exists('g:asteroid_bold')
 endif
 
 let g:asteroid_bold = get(g:, 'asteroid_bold', 0)
+hi BufTabLineActive guifg=#7eb2dd ctermfg=110 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi BufTabLineModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
+hi link BufTabLineModifiedActive BufTabLineModifiedCurrent
+hi link BufTabLineModifiedHidden BufTabLineModifiedCurrent
 hi ALEError guifg=#181819 ctermfg=234 guibg=#fc5d7c ctermbg=204 gui=NONE cterm=NONE
 hi ALEWarning guifg=#181819 ctermfg=234 guibg=#f39660 ctermbg=209 gui=NONE cterm=NONE
 hi ALEInfo guifg=#181819 ctermfg=234 guibg=#7eb2dd ctermbg=110 gui=NONE cterm=NONE
@@ -67,6 +71,9 @@ hi SpellCap guifg=#e7c664 ctermfg=185 gui=underline cterm=underline
 hi SpellRare guifg=#7eb2dd ctermfg=110 gui=underline cterm=underline
 hi StatusLine guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineNC guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
+hi TabLine guifg=#7f8490 ctermfg=102 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
+hi TabLineFill guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi TabLineSel guifg=#56ffff ctermfg=87 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi Title guifg=#56ffff ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Visual guibg=#414550 ctermbg=238 gui=NONE cterm=NONE
 hi VisualNOS guibg=#7f8490 ctermbg=102 gui=NONE cterm=NONE
@@ -117,6 +124,18 @@ hi link cssIdentifier Operator
 hi link cssBraces Noise
 hi link cssClassName Operator
 hi link cssClassNameDot Noise
+hi link CtrlPMatch Title
+hi CtrlPLinePre guifg=#56ffff ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link CtrlPPrtCursor Title
+hi link CtrlPBufferNr Operator
+hi link CtrlPBufferInd Operator
+hi link CtrlPBufferHidMod Error
+hi link CtrlPBufferVisMod Error
+hi link CtrlPBufferCur Type
+hi link CtrlPBufferCurMod Error
+hi link CtrlPBufferPath Comment
+hi CtrlPMode1 guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi CtrlPMode2 guifg=#181819 ctermfg=234 guibg=#7dc3bd ctermbg=109 gui=NONE cterm=NONE
 hi htmlTag guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi htmlEndTag guifg=#5f4448 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link htmlArg Function
@@ -158,6 +177,13 @@ hi link sassVariable cssStringQ
 hi link sassMixinName cssFunctionName
 hi link sassClass cssClassName
 hi link sassId cssIdentifier
+hi link StartifyBracket Comment
+hi link StartifyFile Function
+hi link StartifyFooter Identifier
+hi link StartifyHeader Identifier
+hi link StartifyNumber WarningMsg
+hi link StartifyPath Comment
+hi link StartifySlash Comment
 hi GitGutterAdd guifg=#9ed072 ctermfg=149 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitGutterChange guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitGutterDelete guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE

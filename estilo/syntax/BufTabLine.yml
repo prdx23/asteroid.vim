@@ -1,0 +1,8 @@
+# For plugin - https://github.com/ap/vim-buftabline
+BufTabLineCurrent: '' # TabLineSel
+BufTabLineActive: 'lightblue dark2' # PmenuSel
+BufTabLineHidden: '' # TabLine
+BufTabLineFill: '' # TabLineFill
+BufTabLineModifiedCurrent: 'red darkest' # BufTabLineCurrent
+BufTabLineModifiedActive: '@BufTabLineModifiedCurrent' # BufTabLineActive
+BufTabLineModifiedHidden: '@BufTabLineModifiedCurrent' # BufTabLineHidden

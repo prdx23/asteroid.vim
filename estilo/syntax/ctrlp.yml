@@ -1,0 +1,19 @@
+# For plugin - https://github.com/kien/ctrlp.vim
+CtrlPNoEntries: '' # Error
+CtrlPMatch: '@Title' # Identifier
+CtrlPLinePre: 'cyan' # Comment
+CtrlPPrtBase: '' # Comment
+CtrlPPrtText: '' # Normal
+CtrlPPrtCursor: '@Title' # Constant
+
+CtrlPBufferNr: '@Operator'
+CtrlPBufferInd: '@Operator'
+CtrlPBufferHidMod: '@Error'
+CtrlPBufferVisMod: '@Error'
+CtrlPBufferCur: '@Type'
+CtrlPBufferCurMod: '@Error'
+CtrlPBufferPath: '@Comment'
+
+CtrlPMode1: 'orange dark0' # Character
+CtrlPMode2: 'bg blue' # LineNr
+CtrlPStats: '' # Function

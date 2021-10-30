@@ -1,3 +1,4 @@
+# For plugin - https://github.com/dense-analysis/ale
 ALEError: 'bg red'
 ALEWarning: 'bg orange'
 ALEInfo: 'bg lightblue'

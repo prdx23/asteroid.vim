@@ -1,3 +1,4 @@
+# Includes highlights for - https://github.com/othree/html5.vim
 htmlTag: 'light3' # Function
 htmlEndTag: 'dullred' # Identifier
 htmlArg: '@Function' # Type
