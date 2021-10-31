@@ -44,9 +44,6 @@ SpellLocal: 'orange . u'
 SpellCap: 'yellow . u'
 SpellRare: 'lightblue . u'
 
-StatusLine: 'light2 dark0'
-StatusLineNC: 'light2 dark1'
-
 TabLine: 'light3 darkest'
 TabLineFill: 'light2 dark0'
 TabLineSel: 'cyan darkest'

@@ -8,3 +8,11 @@ colorschemes:
   - name: 'asteroid'
     background: 'dark'
     palette: 'asteroid'
+airline:
+  - name: 'asteroid-airline'
+    palette: 'asteroid'
+    style: 'asteroid'
+lightline:
+  - name: 'asteroid-lightline'
+    palette: 'asteroid'
+    style: 'asteroid'

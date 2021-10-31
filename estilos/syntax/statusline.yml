@@ -1,0 +1,19 @@
+
+StatusLine: 'light2 dark0'
+StatusLineNC: 'light2 dark1'
+
+# StatusLineNormal: 'bg green'
+StatusLineNormal: 'bg red'
+StatusLineInsert: 'bg lightblue'
+StatusLineVisual: 'bg orange'
+StatusLineReplace: 'bg purple'
+StatusLineDefault: 'bg blue'
+
+StatusLineMid: 'light3 dark2'
+StatusLineNCMid: 'light2 dark2'
+StatusLineNCMidLight: 'light1 light2'
+
+StatusLineHighlight: 'cyan dark0'
+StatusLineFlag: 'orange dark0'
+StatusLineRedFlag: 'red dark0'
+StatusLineNCRedFlag: 'red dark1'

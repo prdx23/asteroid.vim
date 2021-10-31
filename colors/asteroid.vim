@@ -30,7 +30,7 @@ hi link YcmErrorSign Error
 hi link YcmWarningSign WarningMsg
 hi link YcmErrorSection DiffDelete
 hi link YcmWarningSection DiffText
-hi YCMInverse guifg=#56efef ctermfg=87 gui=Bold,underline cterm=Bold,underline
+hi YCMInverse guifg=#56eded ctermfg=87 gui=Bold,underline cterm=Bold,underline
 hi BufTabLineActive guifg=#7eb2dd ctermfg=110 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
 hi BufTabLineModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi link BufTabLineModifiedActive BufTabLineModifiedCurrent
@@ -106,6 +106,13 @@ hi link StartifyHeader Identifier
 hi link StartifyNumber WarningMsg
 hi link StartifyPath Comment
 hi link StartifySlash Comment
+hi link vimContinue Noise
+hi link vimSetSep Noise
+hi link vimParenSep Noise
+hi link vimBracket Special
+hi link vimEnvvar Constant
+hi link vimOption BuiltIn
+hi link vimGroup Operator
 hi htmlTag guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi htmlEndTag guifg=#5f4448 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link htmlArg Function
@@ -117,6 +124,7 @@ hi link pythonBuiltInFunc pythonBuiltin
 hi link pythonDottedName pythonDecorator
 hi link pythonDot Noise
 hi link pythonSingleton Identifier
+hi link makeCommands Operator
 hi Normal guifg=#e6e6dc ctermfg=254 guibg=#181819 ctermbg=234 gui=NONE cterm=NONE
 hi ColorColumn guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi Conceal guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
@@ -137,7 +145,7 @@ hi Search guifg=#181819 ctermfg=234 guibg=#e7c664 ctermbg=185 gui=NONE cterm=NON
 hi LineNr guifg=#33353f ctermfg=237 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi CursorLineNr guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MatchParen guifg=#181819 ctermfg=234 guibg=#7eb2dd ctermbg=110 gui=NONE cterm=NONE
-hi ModeMsg guifg=#56efef ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi ModeMsg guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi MoreMsg guifg=#83d28d ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi NonText guifg=#33353f ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Pmenu guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
@@ -150,12 +158,10 @@ hi SpellBad guifg=#fc5d7c ctermfg=204 gui=underline cterm=underline
 hi SpellLocal guifg=#f39660 ctermfg=209 gui=underline cterm=underline
 hi SpellCap guifg=#e7c664 ctermfg=185 gui=underline cterm=underline
 hi SpellRare guifg=#7eb2dd ctermfg=110 gui=underline cterm=underline
-hi StatusLine guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
-hi StatusLineNC guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
 hi TabLine guifg=#7f8490 ctermfg=102 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi TabLineFill guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
-hi TabLineSel guifg=#56efef ctermfg=87 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
-hi Title guifg=#56efef ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TabLineSel guifg=#56eded ctermfg=87 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
+hi Title guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Visual guibg=#414550 ctermbg=238 gui=NONE cterm=NONE
 hi VisualNOS guibg=#7f8490 ctermbg=102 gui=NONE cterm=NONE
 hi WarningMsg guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -183,7 +189,7 @@ hi link Include PreProc
 hi link Define PreProc
 hi link Macro PreProc
 hi link PreCondit PreProc
-hi Type guifg=#56efef ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Type guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link StorageClass Type
 hi link Structure Type
 hi link Typedef Type
@@ -197,8 +203,22 @@ hi Underlined guifg=#7dc3bd ctermfg=109 gui=underline cterm=underline
 hi Ignore guifg=#33353f ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Error guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Todo guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi CtrlPMatch guifg=#56efef ctermfg=87 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
-hi CtrlPLinePre guifg=#56efef ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi StatusLine guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi StatusLineNC guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
+hi StatusLineNormal guifg=#181819 ctermfg=234 guibg=#fc5d7c ctermbg=204 gui=NONE cterm=NONE
+hi StatusLineInsert guifg=#181819 ctermfg=234 guibg=#7eb2dd ctermbg=110 gui=NONE cterm=NONE
+hi StatusLineVisual guifg=#181819 ctermfg=234 guibg=#f39660 ctermbg=209 gui=NONE cterm=NONE
+hi StatusLineReplace guifg=#181819 ctermfg=234 guibg=#9c8cc3 ctermbg=139 gui=NONE cterm=NONE
+hi StatusLineDefault guifg=#181819 ctermfg=234 guibg=#7dc3bd ctermbg=109 gui=NONE cterm=NONE
+hi StatusLineMid guifg=#7f8490 ctermfg=102 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineNCMid guifg=#4f5462 ctermfg=240 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineNCMidLight guifg=#33353f ctermfg=237 guibg=#4f5462 ctermbg=240 gui=NONE cterm=NONE
+hi StatusLineHighlight guifg=#56eded ctermfg=87 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi StatusLineFlag guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi StatusLineRedFlag guifg=#fc5d7c ctermfg=204 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi StatusLineNCRedFlag guifg=#fc5d7c ctermfg=204 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
+hi CtrlPMatch guifg=#56eded ctermfg=87 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
+hi CtrlPLinePre guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link CtrlPPrtText Constant
 hi link CtrlPPrtCursor Title
 hi link CtrlPBufferNr Operator

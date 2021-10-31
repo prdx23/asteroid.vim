@@ -1,0 +1,18 @@
+normal1: 'bg red'
+normal2: 'light3 dark2'
+normal3: 'light2 dark0'
+inactive1: 'light1 light2'
+inactive2: 'light3 dark2'
+inactive3: 'light2 dark2'
+insert1: 'bg lightblue'
+insert2: 'light3 dark2'
+insert3: 'light2 dark0'
+replace1: 'bg purple'
+replace2: 'light3 dark2'
+replace3: 'light2 dark0'
+visual1: 'bg orange'
+visual2: 'light3 dark2'
+visual3: 'light2 dark0'
+# ctrlp1: '' # optional
+# ctrlp2: '' # optional
+# ctrlp3: '' # optional
