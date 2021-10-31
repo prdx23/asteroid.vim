@@ -1,0 +1,7 @@
+# For plugin - https://github.com/dense-analysis/ale
+ALEError: '@DiffDelete'
+ALEWarning: '@DiffText'
+ALEInfo: 'lightblue dullblue'
+ALEErrorSign: '@Error'
+ALEWarningSign: '@WarningMsg'
+ALEInfoSign: '@Directory'

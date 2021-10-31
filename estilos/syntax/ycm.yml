@@ -1,0 +1,6 @@
+# For plugin - https://github.com/ycm-core/YouCompleteMe
+YcmErrorSign: '@Error'
+YcmWarningSign: '@WarningMsg'
+YcmErrorSection: '@DiffDelete'
+YcmWarningSection: '@DiffText'
+YCMInverse: 'cyan . bu'

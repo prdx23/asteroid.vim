@@ -1,10 +1,10 @@
 name: 'asteroid'
-version: '0.1.0'
+version: '1.0.0'
 license: 'MIT'
 author: 'prdx23'
 url: 'https://github.com/prdx23/asteroid.vim'
 description: ''
 colorschemes:
-  - name: asteroid
+  - name: 'asteroid'
     background: 'dark'
-    palette: asteroid
+    palette: 'asteroid'

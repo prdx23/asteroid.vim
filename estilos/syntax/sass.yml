@@ -1,3 +1,4 @@
+sassProperty: '@cssProp'
 sassCssAttribute: '@cssAttr'
 sassVariable: '@cssStringQ'
 sassMixinName: '@cssFunctionName'

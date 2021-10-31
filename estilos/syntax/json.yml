@@ -4,12 +4,12 @@ jsonTest: '' # Label
 jsonEscape: '' # Special
 jsonNumber: '' # Number
 jsonBraces: '@jsonNoise' # Delimiter
-jsonNull: '@BuiltIn' # Function
+jsonNull: '@Constant' # Function
 jsonBoolean: '' # Boolean
-jsonKeyword: '@Function' # Label
+jsonKeyword: '@Statement' # Label
 jsonKeywordMatch: '@jsonNoise' # Normal
 
-jsonError: '@SpellBad'
+jsonError: '@DiffDelete'
 jsonNumError: '@jsonError' # Error
 jsonCommentError: '@jsonError' # Error
 jsonSemicolonError: '@jsonError' # Error

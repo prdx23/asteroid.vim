@@ -4,20 +4,21 @@ ColorColumn: '. dark0'
 Conceal: '. dark2'
 
 Cursor: ''
+CursorIM: ''
 CursorColumn: '. dark1'
 CursorLine: '. dark1'
 
 Directory: 'lightblue'
 
 DiffAdd: 'green dullgreen'
-DiffChange: 'cyan dullblue'
+DiffChange: 'light2 dullblue'
 DiffDelete: 'red dullred'
-DiffText: 'bg lightblue'
+DiffText: 'orange dullyellow'
 
 ErrorMsg: 'red'
 VertSplit: 'dark1'
 Folded: 'lightblue dark2'
-FoldColumn: ''
+FoldColumn: '. dark0'
 SignColumn: '. dark0'
 
 IncSearch: 'bg orange'
@@ -58,15 +59,15 @@ WildMenu: 'bg lightblue'
 
 # BASE SYNTAX
 Comment: 'light2'
-Builtin: 'cyan'
+Builtin: 'aqua'
 Noise: 'light3'
 
-Constant: 'purple'
+Constant: 'pink'
 String: 'yellow' # Constant
 Character: '@String' # Constant
 Boolean: '@Constant' # Constant
 Number: 'green' # Constant
-Float: '@Number' # Constant
+Float: 'olivegreen' # Constant
 
 Identifier: 'blue'
 Function: 'lightblue' # Identifier
@@ -77,7 +78,7 @@ Repeat: '@Statement' # Statement
 Label: '@Statement' # Statement
 Operator: 'orange' # Statement
 Keyword: '@Statement' # Statement
-Exception: '@Operator' # Statement
+Exception: '@Statement' # Statement
 
 PreProc: 'green'
 Include: '@PreProc' # PreProc
@@ -85,7 +86,7 @@ Define: '@PreProc' # PreProc
 Macro: '@PreProc' # PreProc
 PreCondit: '@PreProc' # PreProc
 
-Type: 'aqua'
+Type: 'cyan'
 StorageClass: '@Type' # Type
 Structure: '@Type' # Type
 Typedef: '@Type' # Type
@@ -95,9 +96,9 @@ SpecialChar: '@Special' # Special
 Tag: '@Special' # Special
 Delimiter: '@Operator' # Special
 SpecialComment: '@Special' # Special
-Debug: '@Operator' # Special
+Debug: '@Constant' # Special
 
-Underlined: '. . u'
+Underlined: 'blue . u'
 Ignore: 'light1'
 Error: 'red'
 Todo: 'orange'

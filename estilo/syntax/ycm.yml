@@ -1,6 +1,0 @@
-# For plugin - https://github.com/ycm-core/YouCompleteMe
-YcmErrorSign: 'red'
-YcmWarningSign: 'orange'
-YcmErrorSection: 'bg red'
-YcmWarningSection: 'bg orange'
-YCMInverse: 'cyan . bu'

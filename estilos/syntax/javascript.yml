@@ -18,31 +18,33 @@ javaScriptFunction: '' # Function
 javaScriptBraces: '' # Function
 javaScriptError: '' # Error
 javaScriptParensError: '' # Error
-javaScriptNull: '' # Keyword
+javaScriptNull: '@Constant' # Keyword
 javaScriptBoolean: '' # Boolean
 javaScriptRegexpString: '' # String
 javaScriptIdentifier: '' # Identifier
 javaScriptLabel: '' # Label
 javaScriptException: '' # Exception
 javaScriptMessage: '' # Keyword
-javaScriptGlobal: '' # Keyword
-javaScriptMember: '' # Keyword
-javaScriptDeprecated: '' # Exception
+javaScriptGlobal: '@BuiltIn' # Keyword
+javaScriptMember: '@BuiltIn' # Keyword
+javaScriptDeprecated: '@DiffText' # Exception
 javaScriptReserved: '' # Keyword
 javaScriptDebug: '' # Debug
-javaScriptConstant: '' # Label
+javaScriptConstant: '@Constant' # Label
 
 # javascript-syntax plugin
 jsNoise: '@Noise'
+jsNull: '@javaScriptNull' # Type
+jsUndefined: '@javaScriptNull' # Type
 # jsBrackets: '@Operator'
 
 jsFunction: '@Statement'
 jsArrowFunction: '@Statement'
 
-jsGlobalObjects: '@jsBuiltins'
-jsGlobalNodeObjects: '@Identifier'
-jsBuiltins: '@Builtin'
-jsExceptions: '@Structure'
+jsBuiltins: '@javaScriptGlobal'
+jsGlobalObjects: '@javaScriptGlobal'
+jsGlobalNodeObjects: '@javaScriptGlobal'
+jsExceptions: ''
 
 jsObjectProp: '' # Normal
 

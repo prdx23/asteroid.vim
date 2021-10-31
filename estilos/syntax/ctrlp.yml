@@ -1,9 +1,9 @@
 # For plugin - https://github.com/kien/ctrlp.vim
 CtrlPNoEntries: '' # Error
-CtrlPMatch: '@Title' # Identifier
+CtrlPMatch: 'cyan dullblue' # Identifier
 CtrlPLinePre: 'cyan' # Comment
 CtrlPPrtBase: '' # Comment
-CtrlPPrtText: '' # Normal
+CtrlPPrtText: '@Constant' # Normal
 CtrlPPrtCursor: '@Title' # Constant
 
 CtrlPBufferNr: '@Operator'

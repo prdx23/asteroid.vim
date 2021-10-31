@@ -33,7 +33,7 @@ cssMediaProp: '' # cssProp
 cssPageProp: '' # cssProp
 cssFontDescriptorProp: '' # cssProp
 
-cssAttr: '' # Constant
+cssAttr: '@Function' # Constant
 cssAnimationAttr: '' # cssAttr
 cssBackgroundAttr: '' # cssAttr
 cssBorderAttr: '' # cssAttr
@@ -80,19 +80,20 @@ cssDeprecated: '' # Error
 cssBraceError: '' # Error
 cssError: '' # Error
 
-cssSelectorOp: '' # Special
-cssSelectorOp2: '' # Special
-cssAttrComma: '@Operator' # Special
+cssSelectorOp: '@Noise' # Special
+cssSelectorOp2: '@Noise' # Special
+cssAttrComma: '@Noise' # Special
 cssImportant: '' # Special
 cssUnicodeEscape: '' # Special
 cssMediaType: '' # Special
 cssFontDescriptor: '' # Special
 
+cssPseudoClass: '@PreProc'
 cssPseudoClassId: '' # PreProc
 cssPagePseudo: '' # PreProc
 
 cssPseudoClassLang: '' # Constant
-cssFunction: '' # Constant
+cssFunction: '@Function' # Constant
 cssColor: '' # Constant
 cssKeyFrameSelector: '' # Constant
 cssFontDescriptorFunction: '' # Constant
@@ -104,7 +105,7 @@ cssValueNumber: '' # Number
 cssValueAngle: '' # Number
 cssValueTime: '' # Number
 cssValueFrequency: '' # Number
-cssUnitDecorators: '@Operator' # Number
+cssUnitDecorators: '' # Number
 
 
 cssURL: '' # String

@@ -3,7 +3,7 @@ htmlTag: 'light3' # Function
 htmlEndTag: 'dullred' # Identifier
 htmlArg: '@Function' # Type
 htmlTagName: '' # htmlStatement
-htmlSpecialTagName: '' # Exception
+htmlSpecialTagName: '@Constant' # Exception
 htmlValue: '' # String
 htmlH1: '' # Title
 htmlH2: '' # htmlH1
