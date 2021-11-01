@@ -35,6 +35,75 @@ hi BufTabLineActive guifg=#7eb2dd ctermfg=110 guibg=#2c2e34 ctermbg=236 gui=NONE
 hi BufTabLineModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi link BufTabLineModifiedActive BufTabLineModifiedCurrent
 hi link BufTabLineModifiedHidden BufTabLineModifiedCurrent
+hi link markdownH1 htmlH1
+hi link markdownH2 htmlH2
+hi link markdownH3 htmlH3
+hi link markdownH4 htmlH4
+hi link markdownH5 htmlH5
+hi link markdownH6 htmlH6
+hi link markdownHeadingRule markdownRule
+hi link markdownHeadingDelimiter Delimiter
+hi link markdownOrderedListMarker markdownListMarker
+hi link markdownListMarker Statement
+hi markdownBlockquote guifg=#43634e ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link markdownRule PreProc
+hi link markdownFootnote Special
+hi link markdownFootnoteDefinition Special
+hi link markdownId Special
+hi link markdownIdDeclaration Special
+hi link markdownIdDelimiter markdownLinkDelimiter
+hi link markdownLinkText Underlined
+hi link markdownLinkDelimiter Comment
+hi link markdownLinkTextDelimiter Comment
+hi link markdownUrl Function
+hi link markdownAutomaticLink markdownUrl
+hi link markdownUrlTitle String
+hi link markdownUrlDelimiter markdownLinkDelimiter
+hi link markdownUrlTitleDelimiter Delimiter
+hi markdownItalic guifg=#d185b3 ctermfg=175 gui=Italic cterm=Italic
+hi link markdownItalicDelimiter Comment
+hi markdownBold gui=Bold cterm=Bold
+hi link markdownBoldDelimiter Comment
+hi markdownBoldItalic guifg=#d185b3 ctermfg=175 gui=Bold,Italic cterm=Bold,Italic
+hi link markdownBoldItalicDelimiter Comment
+hi markdownCode guifg=#f39660 ctermfg=209 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
+hi link markdownCodeDelimiter Comment
+hi link markdownEscape Special
+hi link markdownError DiffDelete
+hi link markdownItemDelimiter markdownListMarker
+hi link markdownInlineDelimiter markdownBoldDelimiter
+hi link markdownBlockquoteDelimiter markdownBoldDelimiter
+hi markdownStrike guifg=#5f4448 ctermfg=238 gui=strikethrough cterm=strikethrough
+hi link markdownStrikeDelimiter markdownStrike
+hi link markdownInlineCode markdownCode
+hi link markdownFencedCodeBlock markdownCode
+hi link markdownLinkUrl markdownUrl
+hi link markdownLinkUrlContainer markdownUrlDelimiter
+hi link markdownLinkTextContainer markdownLinkTextDelimiter
+hi link markdownLinkTitleSingleQuoted markdownUrlTitle
+hi link markdownLinkTitleDoubleQuoted markdownUrlTitle
+hi link markdownLinkReference markdownIdDeclaration
+hi link markdownUrlLinkInText markdownUrl
+hi link markdownPullRequestLinkInText markdownUrl
+hi link markdownUserLinkInText markdownUrl
+hi link markdownEmailLinkInText markdownUrl
+hi link mkdHeading markdownHeadingDelimiter
+hi link mkdRule markdownRule
+hi link mkdBold markdownBoldDelimiter
+hi link mkdItalic markdownItalicDelimiter
+hi link mkdBoldItalic markdownBoldItalicDelimiter
+hi link mkdBlockQuote markdownBlockquote
+hi link mkdCode markdownCode
+hi link mkdCodeDelimiter markdownCodeDelimiter
+hi link mkdCodeStart markdownCodeDelimiter
+hi link mkdCodeEnd markdownCodeDelimiter
+hi link mkdListItem markdownListMarker
+hi link mkdDelimiter markdownLinkDelimiter
+hi link mkdURL markdownUrl
+hi link mkdLinkDefTarget mkdURL
+hi link mkdID markdownId
+hi link mkdLinkDef mkdId
+hi link mkdFootnotes markdownFootnote
 hi link javaScriptNull Constant
 hi link javaScriptGlobal BuiltIn
 hi link javaScriptMember BuiltIn
@@ -117,6 +186,15 @@ hi htmlTag guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi htmlEndTag guifg=#5f4448 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link htmlArg Function
 hi link htmlSpecialTagName Constant
+hi link htmlH1 Title
+hi link htmlH2 htmlH1
+hi link htmlH3 BuiltIn
+hi link htmlH4 htmlH3
+hi link htmlH5 htmlH4
+hi link htmlH6 htmlH5
+hi htmlBold gui=Bold cterm=Bold
+hi htmlItalic guifg=#d185b3 ctermfg=175 gui=Italic cterm=Italic
+hi htmlBoldItalic guifg=#d185b3 ctermfg=175 gui=Bold,Italic cterm=Bold,Italic
 hi link pythonBuiltin Builtin
 hi link pythonDecoratorName pythonDecorator
 hi link pythonFunctionCall pythonFunction
@@ -212,7 +290,7 @@ hi StatusLineReplace guifg=#181819 ctermfg=234 guibg=#9c8cc3 ctermbg=139 gui=NON
 hi StatusLineDefault guifg=#181819 ctermfg=234 guibg=#7dc3bd ctermbg=109 gui=NONE cterm=NONE
 hi StatusLineMid guifg=#7f8490 ctermfg=102 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
 hi StatusLineNCMid guifg=#4f5462 ctermfg=240 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
-hi StatusLineNCMidLight guifg=#33353f ctermfg=237 guibg=#4f5462 ctermbg=240 gui=NONE cterm=NONE
+hi StatusLineNCLight guifg=#33353f ctermfg=237 guibg=#4f5462 ctermbg=240 gui=NONE cterm=NONE
 hi StatusLineHighlight guifg=#56eded ctermfg=87 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineFlag guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineRedFlag guifg=#fc5d7c ctermfg=204 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE

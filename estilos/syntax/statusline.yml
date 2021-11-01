@@ -11,7 +11,7 @@ StatusLineDefault: 'bg blue'
 
 StatusLineMid: 'light3 dark2'
 StatusLineNCMid: 'light2 dark2'
-StatusLineNCMidLight: 'light1 light2'
+StatusLineNCLight: 'light1 light2'
 
 StatusLineHighlight: 'cyan dark0'
 StatusLineFlag: 'orange dark0'
