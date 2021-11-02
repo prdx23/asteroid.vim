@@ -46,7 +46,7 @@ markdownBoldItalic: 'pink . bi' # htmlBoldItalic
 markdownBoldItalicDelimiter: '@Comment' # markdownBoldItalic
 markdownCode: 'orange dullblue' # None
 markdownCodeBlock: '' # None
-markdownCodeDelimiter: '@Comment' # Delimiter
+markdownCodeDelimiter: 'light3 dullblue' # Delimiter
 
 markdownEscape: '@Special' # Special
 markdownError: '@DiffDelete' # Error

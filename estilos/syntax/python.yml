@@ -17,15 +17,35 @@ pythonEscape: '' # Special
 pythonNumber: '' # Number
 pythonBuiltin: '@Builtin' # Function
 pythonExceptions: '' # Structure
-pythonSpaceError: '' # Error
+# pythonSpaceError: '' # Error - defined below
 pythonDoctest: '' # Special
 pythonDoctestValue: '' # Define
-
 pythonDecoratorName: '@pythonDecorator'
 
-# python-syntax plugin
+# vim-python/python-syntax plugin
 pythonFunctionCall: '@pythonFunction'
-pythonBuiltInFunc: '@pythonBuiltin'
 pythonDottedName: '@pythonDecorator'
 pythonDot: '@Noise'
-pythonSingleton: '@Identifier'
+
+pythonHexNumber: '@Float'
+pythonOctNumber: '@Float'
+pythonBinNumber: '@Float'
+
+pythonNull: '@Constant'
+pythonBoolean: '@Boolean'
+pythonSingleton: '@pythonNull'
+pythonBuiltInFunc: '@pythonBuiltin'
+pythonBuiltinObj: '@pythonNull'
+pythonBuiltinType: '@Structure'
+
+pythonError: '@DiffDelete'
+pythonIndentError: '@pythonError'
+pythonSpaceError: '@DiffText'
+pythonUniEscapeError: '@pythonError'
+pythonUniRawEscapeError: '@pythonError'
+pythonBytesError: '@pythonError'
+pythonBytesEscapeError: '@pythonError'
+pythonNumberError: '@pythonError'
+pythonOctError: '@pythonError'
+pythonHexError: '@pythonError'
+pythonBinError: '@pythonError'

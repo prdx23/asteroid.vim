@@ -67,7 +67,7 @@ hi link markdownBoldDelimiter Comment
 hi markdownBoldItalic guifg=#d185b3 ctermfg=175 gui=Bold,Italic cterm=Bold,Italic
 hi link markdownBoldItalicDelimiter Comment
 hi markdownCode guifg=#f39660 ctermfg=209 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
-hi link markdownCodeDelimiter Comment
+hi markdownCodeDelimiter guifg=#7f8490 ctermfg=102 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
 hi link markdownEscape Special
 hi link markdownError DiffDelete
 hi link markdownItemDelimiter markdownListMarker
@@ -104,16 +104,22 @@ hi link mkdLinkDefTarget mkdURL
 hi link mkdID markdownId
 hi link mkdLinkDef mkdId
 hi link mkdFootnotes markdownFootnote
+hi link javaScriptNumber Number
+hi link javaScriptFunction Statement
+hi link javaScriptError DiffDelete
+hi link javaScriptBraces Noise
+hi link javaScriptParens Noise
+hi link javaScriptParensError javaScriptError
 hi link javaScriptNull Constant
 hi link javaScriptGlobal BuiltIn
 hi link javaScriptMember BuiltIn
 hi link javaScriptDeprecated DiffText
 hi link javaScriptConstant Constant
-hi link jsNoise Noise
+hi link jsNumber javaScriptNumber
 hi link jsNull javaScriptNull
 hi link jsUndefined javaScriptNull
-hi link jsFunction Statement
-hi link jsArrowFunction Statement
+hi link jsFunction javaScriptFunction
+hi link jsArrowFunction javaScriptFunction
 hi link jsBuiltins javaScriptGlobal
 hi link jsGlobalObjects javaScriptGlobal
 hi link jsGlobalNodeObjects javaScriptGlobal
@@ -198,12 +204,30 @@ hi htmlBoldItalic guifg=#d185b3 ctermfg=175 gui=Bold,Italic cterm=Bold,Italic
 hi link pythonBuiltin Builtin
 hi link pythonDecoratorName pythonDecorator
 hi link pythonFunctionCall pythonFunction
-hi link pythonBuiltInFunc pythonBuiltin
 hi link pythonDottedName pythonDecorator
 hi link pythonDot Noise
-hi link pythonSingleton Identifier
+hi link pythonHexNumber Float
+hi link pythonOctNumber Float
+hi link pythonBinNumber Float
+hi link pythonNull Constant
+hi link pythonBoolean Boolean
+hi link pythonSingleton pythonNull
+hi link pythonBuiltInFunc pythonBuiltin
+hi link pythonBuiltinObj pythonNull
+hi link pythonBuiltinType Structure
+hi link pythonError DiffDelete
+hi link pythonIndentError pythonError
+hi link pythonSpaceError DiffText
+hi link pythonUniEscapeError pythonError
+hi link pythonUniRawEscapeError pythonError
+hi link pythonBytesError pythonError
+hi link pythonBytesEscapeError pythonError
+hi link pythonNumberError pythonError
+hi link pythonOctError pythonError
+hi link pythonHexError pythonError
+hi link pythonBinError pythonError
 hi link makeCommands Operator
-hi Normal guifg=#e6e6dc ctermfg=254 guibg=#181819 ctermbg=234 gui=NONE cterm=NONE
+hi Normal guifg=#c5c8c6 ctermfg=251 guibg=#181819 ctermbg=234 gui=NONE cterm=NONE
 hi ColorColumn guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi Conceal guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
 hi CursorColumn guibg=#25262c ctermbg=235 gui=NONE cterm=NONE

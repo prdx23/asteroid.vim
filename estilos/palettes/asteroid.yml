@@ -1,5 +1,6 @@
 bg: '#181819'
-fg: '#e6e6dc'
+# fg: '#e6e6dc'
+fg: '#c5c8c6'
 
 selection: '#414550'
 
