@@ -337,3 +337,44 @@ hi GitGutterChange guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE ct
 hi GitGutterDelete guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi GitGutterChangeDelete guifg=#e7c664 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 
+if has('terminal')
+  let g:terminal_ansi_colors = [
+    \ "#181819",
+    \ "#fc5d7c",
+    \ "#83d28d",
+    \ "#f39660",
+    \ "#7eb2dd",
+    \ "#7dc3bd",
+    \ "#56eded",
+    \ "#c5c8c6",
+    \ "#2c2e34",
+    \ "#d185b3",
+    \ "#b1d072",
+    \ "#e7c664",
+    \ "#7dc3bd",
+    \ "#9c8cc3",
+    \ "#00bcbc",
+    \ "#c5c8c6"
+  \ ]
+endif
+
+if has('nvim')
+  let g:terminal_color_foreground = "#c5c8c6"
+  let g:terminal_color_background = "#181819"
+  let g:terminal_color_0 = "#181819"
+  let g:terminal_color_1 = "#fc5d7c"
+  let g:terminal_color_2 = "#83d28d"
+  let g:terminal_color_3 = "#f39660"
+  let g:terminal_color_4 = "#7eb2dd"
+  let g:terminal_color_5 = "#7dc3bd"
+  let g:terminal_color_6 = "#56eded"
+  let g:terminal_color_7 = "#c5c8c6"
+  let g:terminal_color_8 = "#2c2e34"
+  let g:terminal_color_9 = "#d185b3"
+  let g:terminal_color_10 = "#b1d072"
+  let g:terminal_color_11 = "#e7c664"
+  let g:terminal_color_12 = "#7dc3bd"
+  let g:terminal_color_13 = "#9c8cc3"
+  let g:terminal_color_14 = "#00bcbc"
+  let g:terminal_color_15 = "#c5c8c6"
+endif
