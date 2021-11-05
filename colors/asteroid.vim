@@ -31,10 +31,10 @@ hi link YcmWarningSign WarningMsg
 hi link YcmErrorSection DiffDelete
 hi link YcmWarningSection DiffText
 hi YCMInverse guifg=#56eded ctermfg=87 gui=Bold,underline cterm=Bold,underline
-hi BufTabLineActive guifg=#7eb2dd ctermfg=110 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
-hi BufTabLineModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
-hi link BufTabLineModifiedActive BufTabLineModifiedCurrent
-hi link BufTabLineModifiedHidden BufTabLineModifiedCurrent
+hi link BufTabLineActive BufTabLineHidden
+hi BufTabLineModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
+hi BufTabLineModifiedActive guifg=#5f4448 ctermfg=238 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi BufTabLineModifiedHidden guifg=#5f4448 ctermfg=238 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi link markdownH1 htmlH1
 hi link markdownH2 htmlH2
 hi link markdownH3 htmlH3
@@ -260,9 +260,9 @@ hi SpellBad guifg=#fc5d7c ctermfg=204 gui=underline cterm=underline
 hi SpellLocal guifg=#f39660 ctermfg=209 gui=underline cterm=underline
 hi SpellCap guifg=#e7c664 ctermfg=185 gui=underline cterm=underline
 hi SpellRare guifg=#7eb2dd ctermfg=110 gui=underline cterm=underline
-hi TabLine guifg=#7f8490 ctermfg=102 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
+hi TabLine guifg=#4f5462 ctermfg=240 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi TabLineFill guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
-hi TabLineSel guifg=#56eded ctermfg=87 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
+hi TabLineSel guifg=#56eded ctermfg=87 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
 hi Title guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Visual guibg=#414550 ctermbg=238 gui=NONE cterm=NONE
 hi VisualNOS guibg=#7f8490 ctermbg=102 gui=NONE cterm=NONE

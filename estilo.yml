@@ -9,10 +9,10 @@ colorschemes:
     background: 'dark'
     palette: 'asteroid'
 airline:
-  - name: 'asteroid-airline'
+  - name: 'asteroid'
     palette: 'asteroid'
     style: 'asteroid'
 lightline:
-  - name: 'asteroid-lightline'
+  - name: 'asteroid'
     palette: 'asteroid'
     style: 'asteroid'

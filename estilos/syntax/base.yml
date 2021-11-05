@@ -44,9 +44,9 @@ SpellLocal: 'orange . u'
 SpellCap: 'yellow . u'
 SpellRare: 'lightblue . u'
 
-TabLine: 'light3 darkest'
+TabLine: 'light2 darkest'
 TabLineFill: 'light2 dark0'
-TabLineSel: 'cyan darkest'
+TabLineSel: 'cyan dullblue'
 
 Title: 'cyan'
 Visual: '. selection'
