@@ -1,0 +1,46 @@
+normalFloat: 'light2 bg'
+floatBorder: 'light1 bg'
+
+DiagnosticError: 'brightred'
+DiagnosticUnderlineError: 'brightred dullred'
+DiagnosticVirtualTextError: '' # DiagnosticError
+DiagnosticFloatingError: '' # DiagnosticError
+DiagnosticSignError: 'brightred dark0' # DiagnosticError
+LspDiagnosticsDefaultError: '@DiagnosticError' # nvim 0.5 old highlights
+LspDiagnosticsVirtualTextError: '@DiagnosticVirtualTextError' # nvim 0.5 old highlights
+LspDiagnosticsFloatingError: '@DiagnosticFloatingError' # nvim 0.5 old highlights
+LspDiagnosticsSignError: '@DiagnosticSignError' # nvim 0.5 old highlights
+LspDiagnosticsUnderlineError: '@DiagnosticUnderlineError' # nvim 0.5 old highlights
+
+DiagnosticWarn: 'orange'
+DiagnosticUnderlineWarn: 'orange dullyellow'
+DiagnosticVirtualTextWarn: '' # DiagnosticWarn
+DiagnosticFloatingWarn: '' # DiagnosticWarn
+DiagnosticSignWarn: 'orange dark0' # DiagnosticWarn
+LspDiagnosticsDefaultWarning: '@DiagnosticWarn' # nvim 0.5 old highlights
+LspDiagnosticsVirtualTextWarning: '@DiagnosticVirtualTextWarn' # nvim 0.5 old highlights
+LspDiagnosticsFloatingWarning: '@DiagnosticFloatingWarn' # nvim 0.5 old highlights
+LspDiagnosticsSignWarning: '@DiagnosticSignWarn' # nvim 0.5 old highlights
+LspDiagnosticsUnderlineWarning: '@DiagnosticUnderlineWarn' # nvim 0.5 old highlights
+
+DiagnosticInfo: 'lightblue'
+DiagnosticUnderlineInfo: '. selection'
+DiagnosticVirtualTextInfo: '' # DiagnosticInfo
+DiagnosticFloatingInfo: '' # DiagnosticInfo
+DiagnosticSignInfo: 'lightblue dark0' # DiagnosticInfo
+LspDiagnosticsDefaultInformation: '@DiagnosticInfo' # nvim 0.5 old highlights
+LspDiagnosticsVirtualTextInformation: '@DiagnosticVirtualTextInfo' # nvim 0.5 old highlights
+LspDiagnosticsFloatingInformation: '@DiagnosticFloatingInfo' # nvim 0.5 old highlights
+LspDiagnosticsSignInformation: '@DiagnosticSignInfo' # nvim 0.5 old highlights
+LspDiagnosticsUnderlineInformation: '@DiagnosticUnderlineInfo' # nvim 0.5 old highlights
+
+DiagnosticHint: 'purple'
+DiagnosticUnderlineHint: '. light1'
+DiagnosticVirtualTextHint: '' # DiagnosticHint
+DiagnosticFloatingHint: '' # DiagnosticHint
+DiagnosticSignHint: 'purple dark0' # DiagnosticHint
+LspDiagnosticsDefaultHint: '@DiagnosticHint' # nvim 0.5 old highlights
+LspDiagnosticsVirtualTextHint: '@DiagnosticVirtualTextHint' # nvim 0.5 old highlights
+LspDiagnosticsFloatingHint: '@DiagnosticFloatingHint' # nvim 0.5 old highlights
+LspDiagnosticsSignHint: '@DiagnosticSignHint' # nvim 0.5 old highlights
+LspDiagnosticsUnderlineHint: '@DiagnosticUnderlineHint' # nvim 0.5 old highlights

@@ -1,0 +1,12 @@
+TelescopeSelection: '. dullblue'
+TelescopeSelectionCaret: 'cyan'
+TelescopeMultiSelection: ''
+TelescopeNormal: '@Comment'
+
+TelescopeBorder: 'light2'
+# TelescopePromptBorder: 'blue'
+# TelescopeResultsBorder: 'red'
+# TelescopePreviewBorder: 'orange'
+
+TelescopeMatching: 'blue'
+TelescopePromptPrefix: 'light2'

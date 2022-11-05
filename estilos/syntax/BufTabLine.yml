@@ -1,8 +1,8 @@
 # For plugin - https://github.com/ap/vim-buftabline
-BufTabLineCurrent: '' # TabLineSel
-BufTabLineActive: '@BufTabLineHidden' # PmenuSel
-BufTabLineHidden: '' # TabLine
+BufTabLineCurrent: '@StatusLineTabCurrent' # TabLineSel
+BufTabLineActive: '@StatusLineTabActive' # PmenuSel
+BufTabLineHidden: '@StatusLineTabHidden' # TabLine
 BufTabLineFill: '' # TabLineFill
-BufTabLineModifiedCurrent: 'red dullblue' # BufTabLineCurrent
-BufTabLineModifiedActive: 'dullred dark2' # BufTabLineActive
-BufTabLineModifiedHidden: 'dullred darkest' # BufTabLineHidden
+BufTabLineModifiedCurrent: '@StatusLineTabModifiedCurrent' # BufTabLineCurrent
+BufTabLineModifiedActive: '@StatusLineTabModifiedActive' # BufTabLineActive
+BufTabLineModifiedHidden: '@StatusLineTabModifiedHidden' # BufTabLineHidden

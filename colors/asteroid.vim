@@ -31,10 +31,12 @@ hi link YcmWarningSign WarningMsg
 hi link YcmErrorSection DiffDelete
 hi link YcmWarningSection DiffText
 hi YCMInverse guifg=#56eded ctermfg=87 gui=Bold,underline cterm=Bold,underline
-hi link BufTabLineActive BufTabLineHidden
-hi BufTabLineModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
-hi BufTabLineModifiedActive guifg=#5f4448 ctermfg=238 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
-hi BufTabLineModifiedHidden guifg=#5f4448 ctermfg=238 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
+hi link BufTabLineCurrent StatusLineTabCurrent
+hi link BufTabLineActive StatusLineTabActive
+hi link BufTabLineHidden StatusLineTabHidden
+hi link BufTabLineModifiedCurrent StatusLineTabModifiedCurrent
+hi link BufTabLineModifiedActive StatusLineTabModifiedActive
+hi link BufTabLineModifiedHidden StatusLineTabModifiedHidden
 hi link markdownH1 htmlH1
 hi link markdownH2 htmlH2
 hi link markdownH3 htmlH3
@@ -188,6 +190,10 @@ hi link vimBracket Special
 hi link vimEnvvar Constant
 hi link vimOption BuiltIn
 hi link vimGroup Operator
+hi CmpItemAbbrMatch guifg=#c5c8c6 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi CmpItemAbbrMatchFuzzy guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi CmpItemKind guifg=#5f4448 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi CmpItemMenu guifg=#4e432f ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi htmlTag guifg=#7f8490 ctermfg=102 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi htmlEndTag guifg=#5f4448 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link htmlArg Function
@@ -227,6 +233,67 @@ hi link pythonOctError pythonError
 hi link pythonHexError pythonError
 hi link pythonBinError pythonError
 hi link makeCommands Operator
+hi link jinjaOperator Operator
+hi link jinjaTagBlock Operator
+hi link jinjaVarBlock Operator
+hi link jinjaFilter BuiltIn
+hi link jinjaBlockName BuiltIn
+hi link TSPunctDelimiter Noise
+hi link TSPunctBracket Noise
+hi link TSConstBuiltin Constant
+hi link TSFuncBuiltin Builtin
+hi link TSParameterReference Special
+hi link TSVariable Normal
+hi link TSVariableBuiltin Builtin
+hi TSDanger guifg=#fc5d7c ctermfg=204 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
+hi link TSStrong markdownBold
+hi link TSEmphasis markdownItalic
+hi link TSTag Statement
+hi link TSTagAttribute Function
+hi link TSTagDelimiter Noise
+hi TSURI guifg=#7dc3bd ctermfg=109 gui=underline cterm=underline
+hi link TSMath Constant
+hi link TSTextReference Special
+hi TelescopeSelection guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
+hi TelescopeSelectionCaret guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link TelescopeNormal Comment
+hi TelescopeBorder guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TelescopeMatching guifg=#7dc3bd ctermfg=109 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TelescopePromptPrefix guifg=#4f5462 ctermfg=240 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi normalFloat guifg=#4f5462 ctermfg=240 guibg=#181819 ctermbg=234 gui=NONE cterm=NONE
+hi floatBorder guifg=#33353f ctermfg=237 guibg=#181819 ctermbg=234 gui=NONE cterm=NONE
+hi DiagnosticError guifg=#ff3d5b ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticUnderlineError guifg=#ff3d5b ctermfg=203 guibg=#5f4448 ctermbg=238 gui=NONE cterm=NONE
+hi DiagnosticSignError guifg=#ff3d5b ctermfg=203 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi link LspDiagnosticsDefaultError DiagnosticError
+hi link LspDiagnosticsVirtualTextError DiagnosticVirtualTextError
+hi link LspDiagnosticsFloatingError DiagnosticFloatingError
+hi link LspDiagnosticsSignError DiagnosticSignError
+hi link LspDiagnosticsUnderlineError DiagnosticUnderlineError
+hi DiagnosticWarn guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticUnderlineWarn guifg=#f39660 ctermfg=209 guibg=#4e432f ctermbg=238 gui=NONE cterm=NONE
+hi DiagnosticSignWarn guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi link LspDiagnosticsDefaultWarning DiagnosticWarn
+hi link LspDiagnosticsVirtualTextWarning DiagnosticVirtualTextWarn
+hi link LspDiagnosticsFloatingWarning DiagnosticFloatingWarn
+hi link LspDiagnosticsSignWarning DiagnosticSignWarn
+hi link LspDiagnosticsUnderlineWarning DiagnosticUnderlineWarn
+hi DiagnosticInfo guifg=#7eb2dd ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticUnderlineInfo guibg=#414550 ctermbg=238 gui=NONE cterm=NONE
+hi DiagnosticSignInfo guifg=#7eb2dd ctermfg=110 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi link LspDiagnosticsDefaultInformation DiagnosticInfo
+hi link LspDiagnosticsVirtualTextInformation DiagnosticVirtualTextInfo
+hi link LspDiagnosticsFloatingInformation DiagnosticFloatingInfo
+hi link LspDiagnosticsSignInformation DiagnosticSignInfo
+hi link LspDiagnosticsUnderlineInformation DiagnosticUnderlineInfo
+hi DiagnosticHint guifg=#9c8cc3 ctermfg=139 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticUnderlineHint guibg=#33353f ctermbg=237 gui=NONE cterm=NONE
+hi DiagnosticSignHint guifg=#9c8cc3 ctermfg=139 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi link LspDiagnosticsDefaultHint DiagnosticHint
+hi link LspDiagnosticsVirtualTextHint DiagnosticVirtualTextHint
+hi link LspDiagnosticsFloatingHint DiagnosticFloatingHint
+hi link LspDiagnosticsSignHint DiagnosticSignHint
+hi link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
 hi Normal guifg=#c5c8c6 ctermfg=251 guibg=#181819 ctermbg=234 gui=NONE cterm=NONE
 hi ColorColumn guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi Conceal guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
@@ -235,9 +302,9 @@ hi CursorLine guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
 hi Directory guifg=#7eb2dd ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiffAdd guifg=#83d28d ctermfg=114 guibg=#43634e ctermbg=239 gui=NONE cterm=NONE
 hi DiffChange guifg=#4f5462 ctermfg=240 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
-hi DiffDelete guifg=#fc5d7c ctermfg=204 guibg=#5f4448 ctermbg=238 gui=NONE cterm=NONE
+hi DiffDelete guifg=#ff3d5b ctermfg=203 guibg=#5f4448 ctermbg=238 gui=NONE cterm=NONE
 hi DiffText guifg=#f39660 ctermfg=209 guibg=#4e432f ctermbg=238 gui=NONE cterm=NONE
-hi ErrorMsg guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi ErrorMsg guifg=#ff3d5b ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi VertSplit guifg=#25262c ctermfg=235 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Folded guifg=#7eb2dd ctermfg=110 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
 hi FoldColumn guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
@@ -282,7 +349,7 @@ hi Function guifg=#7eb2dd ctermfg=110 guibg=NONE ctermbg=NONE gui=NONE cterm=NON
 hi Statement guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link Conditional Statement
 hi link Repeat Statement
-hi link Label Statement
+hi link Label Constant
 hi Operator guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link Keyword Statement
 hi link Exception Statement
@@ -300,10 +367,9 @@ hi link SpecialChar Special
 hi link Tag Special
 hi link Delimiter Operator
 hi link SpecialComment Special
-hi link Debug Constant
 hi Underlined guifg=#7dc3bd ctermfg=109 gui=underline cterm=underline
 hi Ignore guifg=#33353f ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Error guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Error guifg=#ff3d5b ctermfg=203 guibg=#5f4448 ctermbg=238 gui=NONE cterm=NONE
 hi Todo guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi StatusLine guifg=#4f5462 ctermfg=240 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineNC guifg=#4f5462 ctermfg=240 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
@@ -313,12 +379,23 @@ hi StatusLineVisual guifg=#181819 ctermfg=234 guibg=#f39660 ctermbg=209 gui=NONE
 hi StatusLineReplace guifg=#181819 ctermfg=234 guibg=#9c8cc3 ctermbg=139 gui=NONE cterm=NONE
 hi StatusLineDefault guifg=#181819 ctermfg=234 guibg=#7dc3bd ctermbg=109 gui=NONE cterm=NONE
 hi StatusLineMid guifg=#7f8490 ctermfg=102 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineMidRed guifg=#fc5d7c ctermfg=204 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineMidOrange guifg=#f39660 ctermfg=209 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineMidBlue guifg=#7eb2dd ctermfg=110 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineMidPurple guifg=#9c8cc3 ctermfg=139 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineMidGreen guifg=#83d28d ctermfg=114 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
 hi StatusLineNCMid guifg=#4f5462 ctermfg=240 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
 hi StatusLineNCLight guifg=#33353f ctermfg=237 guibg=#4f5462 ctermbg=240 gui=NONE cterm=NONE
 hi StatusLineHighlight guifg=#56eded ctermfg=87 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineFlag guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineRedFlag guifg=#fc5d7c ctermfg=204 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi StatusLineNCRedFlag guifg=#fc5d7c ctermfg=204 guibg=#25262c ctermbg=235 gui=NONE cterm=NONE
+hi link StatusLineTabCurrent TabLineSel
+hi link StatusLineTabActive TabLineHidden
+hi link StatusLineTabHidden TabLine
+hi StatusLineTabModifiedCurrent guifg=#fc5d7c ctermfg=204 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
+hi StatusLineTabModifiedActive guifg=#5f4448 ctermfg=238 guibg=#2c2e34 ctermbg=236 gui=NONE cterm=NONE
+hi StatusLineTabModifiedHidden guifg=#5f4448 ctermfg=238 guibg=#121213 ctermbg=233 gui=NONE cterm=NONE
 hi CtrlPMatch guifg=#56eded ctermfg=87 guibg=#242b36 ctermbg=235 gui=NONE cterm=NONE
 hi CtrlPLinePre guifg=#56eded ctermfg=87 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi link CtrlPPrtText Constant
@@ -332,10 +409,10 @@ hi link CtrlPBufferCurMod Error
 hi link CtrlPBufferPath Comment
 hi CtrlPMode1 guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 hi CtrlPMode2 guifg=#181819 ctermfg=234 guibg=#7dc3bd ctermbg=109 gui=NONE cterm=NONE
-hi GitGutterAdd guifg=#83d28d ctermfg=114 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterChange guifg=#f39660 ctermfg=209 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterDelete guifg=#fc5d7c ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi GitGutterChangeDelete guifg=#e7c664 ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi GitGutterAdd guifg=#83d28d ctermfg=114 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi GitGutterChange guifg=#f39660 ctermfg=209 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi GitGutterDelete guifg=#fc5d7c ctermfg=204 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
+hi GitGutterChangeDelete guifg=#e7c664 ctermfg=185 guibg=#1b1b1c ctermbg=234 gui=NONE cterm=NONE
 
 if has('terminal')
   let g:terminal_ansi_colors = [

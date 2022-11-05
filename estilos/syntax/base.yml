@@ -12,10 +12,10 @@ Directory: 'lightblue'
 
 DiffAdd: 'green dullgreen'
 DiffChange: 'light2 dullblue'
-DiffDelete: 'red dullred'
+DiffDelete: 'brightred dullred'
 DiffText: 'orange dullyellow'
 
-ErrorMsg: 'red'
+ErrorMsg: 'brightred'
 VertSplit: 'dark1'
 Folded: 'lightblue dark2'
 FoldColumn: '. dark0'
@@ -72,7 +72,7 @@ Function: 'lightblue' # Identifier
 Statement: 'red'
 Conditional: '@Statement' # Statement
 Repeat: '@Statement' # Statement
-Label: '@Statement' # Statement
+Label: '@Constant' # Statement
 Operator: 'orange' # Statement
 Keyword: '@Statement' # Statement
 Exception: '@Statement' # Statement
@@ -93,9 +93,9 @@ SpecialChar: '@Special' # Special
 Tag: '@Special' # Special
 Delimiter: '@Operator' # Special
 SpecialComment: '@Special' # Special
-Debug: '@Constant' # Special
+Debug: '' # Special
 
 Underlined: 'blue . u'
 Ignore: 'light1'
-Error: 'red'
+Error: 'brightred dullred'
 Todo: 'orange'
