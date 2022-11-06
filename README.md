@@ -75,7 +75,7 @@ let g:lightline = { 'colorscheme': 'asteroid' }
     - [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
     - [sainnhe/sonokai](https://github.com/sainnhe/sonokai)
     - [pineapplegiant/spaceduck](https://github.com/pineapplegiant/spaceduck)
-- [estilo](https://github.com/jacoborus/estilo): An awesome colorscheme manager
+- [lush.nvim](https://github.com/rktjmp/lush.nvim): An awesome colorscheme helper tool
 
 
 ---

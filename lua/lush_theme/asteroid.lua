@@ -188,10 +188,14 @@ local theme = lush(function(injected_functions)
         -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
         -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
         -- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
-        DiagnosticUnderlineError   { DiagnosticError, gui='undercurl' } , -- Used to underline "Error" diagnostics.
-        DiagnosticUnderlineWarn    { DiagnosticWarn, gui='undercurl'} , -- Used to underline "Warn" diagnostics.
-        DiagnosticUnderlineInfo    { DiagnosticInfo, gui='undercurl'} , -- Used to underline "Info" diagnostics.
-        DiagnosticUnderlineHint    { DiagnosticHint, gui='undercurl'} , -- Used to underline "Hint" diagnostics.
+        DiagnosticUnderlineError   { DiagnosticError, bg=dullred, gui='undercurl' } , -- Used to underline "Error" diagnostics.
+        DiagnosticUnderlineWarn    { DiagnosticWarn,  bg=dullyellow, gui='undercurl'} , -- Used to underline "Warn" diagnostics.
+        DiagnosticUnderlineInfo    { DiagnosticInfo,  bg=dullblue, gui='undercurl'} , -- Used to underline "Info" diagnostics.
+        DiagnosticUnderlineHint    { DiagnosticHint,  bg=dullblue, gui='undercurl'} , -- Used to underline "Hint" diagnostics.
+        -- DiagnosticUnderlineError   { DiagnosticError, gui='undercurl' } , -- Used to underline "Error" diagnostics.
+        -- DiagnosticUnderlineWarn    { DiagnosticWarn, gui='undercurl'} , -- Used to underline "Warn" diagnostics.
+        -- DiagnosticUnderlineInfo    { DiagnosticInfo, gui='undercurl'} , -- Used to underline "Info" diagnostics.
+        -- DiagnosticUnderlineHint    { DiagnosticHint, gui='undercurl'} , -- Used to underline "Hint" diagnostics.
         -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
         -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
         -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.

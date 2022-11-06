@@ -68,10 +68,10 @@ highlight DiagnosticSignError guifg=#FF3D5A guibg=#1B1B1D guisp=NONE blend=NONE 
 highlight DiagnosticSignHint guifg=#9D8DC3 guibg=#1B1B1D guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticSignInfo guifg=#7EB2DD guibg=#1B1B1D guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticSignWarn guifg=#F3945E guibg=#1B1B1D guisp=NONE blend=NONE gui=NONE
-highlight DiagnosticUnderlineError guifg=#FF3D5A guibg=NONE guisp=NONE blend=NONE gui=undercurl
-highlight DiagnosticUnderlineHint guifg=#9D8DC3 guibg=NONE guisp=NONE blend=NONE gui=undercurl
-highlight DiagnosticUnderlineInfo guifg=#7EB2DD guibg=NONE guisp=NONE blend=NONE gui=undercurl
-highlight DiagnosticUnderlineWarn guifg=#F3945E guibg=NONE guisp=NONE blend=NONE gui=undercurl
+highlight DiagnosticUnderlineError guifg=#FF3D5A guibg=#5F4448 guisp=NONE blend=NONE gui=undercurl
+highlight DiagnosticUnderlineHint guifg=#9D8DC3 guibg=#252C37 guisp=NONE blend=NONE gui=undercurl
+highlight DiagnosticUnderlineInfo guifg=#7EB2DD guibg=#252C37 guisp=NONE blend=NONE gui=undercurl
+highlight DiagnosticUnderlineWarn guifg=#F3945E guibg=#504530 guisp=NONE blend=NONE gui=undercurl
 highlight DiagnosticWarn guifg=#F3945E guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiffAdd guifg=#83D28E guibg=#44644F guisp=NONE blend=NONE gui=NONE
 highlight DiffChange guifg=#4F5563 guibg=#252C37 guisp=NONE blend=NONE gui=NONE
