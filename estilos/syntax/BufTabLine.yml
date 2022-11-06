@@ -1,8 +1,0 @@
-# For plugin - https://github.com/ap/vim-buftabline
-BufTabLineCurrent: '@StatusLineTabCurrent' # TabLineSel
-BufTabLineActive: '@StatusLineTabActive' # PmenuSel
-BufTabLineHidden: '@StatusLineTabHidden' # TabLine
-BufTabLineFill: '' # TabLineFill
-BufTabLineModifiedCurrent: '@StatusLineTabModifiedCurrent' # BufTabLineCurrent
-BufTabLineModifiedActive: '@StatusLineTabModifiedActive' # BufTabLineActive
-BufTabLineModifiedHidden: '@StatusLineTabModifiedHidden' # BufTabLineHidden
