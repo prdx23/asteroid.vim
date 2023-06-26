@@ -4,44 +4,44 @@ local hsl = lush.hsl
 
 -- color palette --------------
 
-local bg = hsl('#181819')
-local fg = hsl('#c5c8c6')
+local bg = '#141415'
+local fg = '#c5c8c6'
 
-local selection = hsl('#414550')
+local selection = '#414550'
 
-local darkest = hsl('#121213')
-local dark0 = hsl('#1b1b1c')
-local dark1 = hsl('#25262c')
-local dark2 = hsl('#2c2e34')
+local darkest = '#111112'
+local dark0 = '#18181a'
+local dark1 = '#25262c'
+local dark2 = '#2c2e34'
 
-local light1 = hsl('#33353f')
-local light2 = hsl('#4f5462')
-local light3 = hsl('#7f8490')
+local light1 = '#33353f'
+local light2 = '#4f5462'
+local light3 = '#7f8490'
 
-local brightred = hsl('#ff3d5b')
+local brightred = '#ff3d5b'
 
-local red = hsl('#fc5d7c')
--- local pink = hsl('#df77b6')
-local pink = hsl('#d185b3')
-local orange = hsl('#f39660')
-local yellow = hsl('#e7c664')
--- local green = hsl('#9ed072')
-local green = hsl('#83d28d')
--- local olivegreen = hsl('#9ed072')
-local olivegreen = hsl('#b1d072')
--- local blue = hsl('#4c70c1')
-local blue = hsl('#7dc3bd')
-local lightblue = hsl('#7eb2dd')
--- local cyan = hsl('#56ffff')
-local cyan = hsl('#56eded')
-local aqua = hsl('#00bcbc')
--- local purple = hsl('#b39df3')
-local purple = hsl('#9c8cc3')
+local red = '#fc5d7c'
+-- local pink = '#df77b6'
+local pink = '#d185b3'
+local orange = '#f39660'
+local yellow = '#e7c664'
+-- local green = '#9ed072'
+local green = '#83d28d'
+-- local olivegreen = '#9ed072'
+local olivegreen = '#b1d072'
+-- local blue = '#4c70c1'
+local blue = '#7dc3bd'
+local lightblue = '#7eb2dd'
+-- local cyan = '#56ffff'
+local cyan = '#56eded'
+local aqua = '#00bcbc'
+-- local purple = '#b39df3'
+local purple = '#9c8cc3'
 
-local dullred = hsl('#5f4448')
-local dullyellow = hsl('#4e432f')
-local dullgreen = hsl('#43634e')
-local dullblue = hsl('#242b36')
+local dullred = '#5f4448'
+local dullyellow = '#4e432f'
+local dullgreen = '#43634e'
+local dullblue = '#242b36'
 
 --------------------------------
 
@@ -56,15 +56,15 @@ local theme = lush(function(injected_functions)
         Normal       { fg=fg, bg=bg }, -- Normal text
         ColorColumn  { bg=dark0 }, -- Columns set with 'colorcolumn'
         Conceal      { bg=dark2 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-        NormalFloat  { fg=light2, bg=bg }, -- Normal text in floating windows.
+        NormalFloat  { fg=fg, bg=bg }, -- Normal text in floating windows.
         floatBorder  { fg=light1, bg=bg }, -- Normal text in floating windows.
         -- NormalNC     { Normal }, -- normal text in non-current windows
 
         -- Cursor       { }, -- Character under the cursor
         -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
-        CursorColumn { bg=dark1 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorLine   { bg=dark1 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+        CursorColumn { bg=dark0 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+        CursorLine   { bg=dark0 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
         -- TermCursor   { }, -- Cursor in a focused terminal
         -- TermCursorNC { }, -- Cursor in an unfocused terminal
 
@@ -82,12 +82,13 @@ local theme = lush(function(injected_functions)
         FoldColumn   { bg=dark0 }, -- 'foldcolumn'
         SignColumn   { bg=dark0 }, -- Column where |signs| are displayed
 
-        IncSearch    { fg=bg, bg=orange}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-        Search       { fg=bg, bg=yellow}, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+        IncSearch    { fg=bg, bg=orange }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+        Search       { fg=bg, bg=yellow }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+        CurSearch    { IncSearch }, -- Current highlighted search
         -- Substitute   { }, -- |:substitute| replacement text highlighting
 
-        LineNr       { fg=light1, bg=dark0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        CursorLineNr { fg=light2 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+        LineNr       { fg=light2, bg=dark0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+        CursorLineNr { fg=lightblue }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         MatchParen   { fg=bg, bg=lightblue }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 
         ModeMsg      { fg=cyan }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -205,6 +206,38 @@ local theme = lush(function(injected_functions)
         DiagnosticSignInfo         { DiagnosticInfo, bg=dark0 } , -- Used for "Info" signs in sign column.
         DiagnosticSignHint         { DiagnosticHint, bg=dark0 } , -- Used for "Hint" signs in sign column.
 
+        -- sym("@lsp.type.class") { Structure } ,
+        sym("@lsp.type.decorator") { Define } ,
+        -- sym("@lsp.type.enum") { Structure } ,
+        -- sym("@lsp.type.enumMember") { Constant } ,
+        -- sym("@lsp.type.function") { Function } ,
+        -- sym("@lsp.type.interface") { Structure } ,
+        -- sym("@lsp.type.macro") { Macro } ,
+        -- sym("@lsp.type.method") { Function } ,
+        sym("@lsp.type.namespace") { Special } ,
+        -- sym("@lsp.type.parameter") { Identifier } ,
+        -- sym("@lsp.type.property") { Identifier } ,
+        -- sym("@lsp.type.struct") { Structure } ,
+        -- sym("@lsp.type.type") { Type } ,
+        -- sym("@lsp.type.typeParameter") { Typedef } ,
+        sym("@lsp.type.variable") { Normal } ,
+
+        -- sym("@lsp.mod.declaration") { } ,
+        -- sym("@lsp.mod.definition") { } ,
+        -- sym("@lsp.mod.readonly") { } ,
+        -- sym("@lsp.mod.static") { } ,
+        sym("@lsp.mod.deprecated") { fg=dullyellow } ,
+        -- sym("@lsp.mod.abstract") { } ,
+        -- sym("@lsp.mod.async") { } ,
+        -- sym("@lsp.mod.modification") { } ,
+        -- sym("@lsp.mod.mutable") { } ,
+        -- sym("@lsp.mod.documentation") { } ,
+        sym("@lsp.mod.defaultLibrary") { Builtin } ,
+        sym("@lsp.mod.constant") { Constant } ,
+
+        sym("@lsp.typemod.class.defaultLibrary") { Structure } ,
+        sym("@lsp.typemod.macro.defaultLibrary") { Macro } ,
+
 ---------- NVIM Treesitter --------------------------------------------------------
         -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
 
@@ -236,7 +269,8 @@ local theme = lush(function(injected_functions)
         -- TSKeywordReturn      { } , -- Keywords like `return` and `yield`.
         -- TSLabel              { } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
         -- TSMethod             { } , -- Method calls and definitions.
-        -- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
+        TSNamespace          { Special } , -- Identifiers referring to modules and namespaces.
+        sym("@namespace") { Special } ,
         -- TSNone               { } , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
         -- TSNumber             { } , -- Numeric literals that don't fit into other categories.
         -- TSOperator           { } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
