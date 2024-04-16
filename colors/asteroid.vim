@@ -10,7 +10,7 @@ endif
 let g:colors_name="asteroid"
 
 " Highlights:
-highlight Normal guifg=#c5c8c6 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight Normal guifg=#c5c8c6 guibg=#111112 guisp=NONE blend=NONE gui=NONE
 highlight! link TSVariable Normal
 highlight! link @lsp.type.variable Normal
 highlight! link @variable Normal
@@ -33,7 +33,7 @@ highlight CmpItemAbbrMatch guifg=#c5c8c6 guibg=NONE guisp=NONE blend=NONE gui=NO
 highlight CmpItemAbbrMatchFuzzy guifg=#4f5462 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemKind guifg=#5f4448 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CmpItemMenu guifg=#4e432f guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight ColorColumn guifg=NONE guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight ColorColumn guifg=NONE guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight Comment guifg=#4f5462 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link CtrlPBufferPath Comment
 highlight! link StartifyBracket Comment
@@ -58,20 +58,20 @@ highlight! link @lsp.mod.constant Constant
 highlight! link @text.math Constant
 highlight CtrlPLinePre guifg=#56eded guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight CtrlPMatch guifg=#56eded guibg=#242b36 guisp=NONE blend=NONE gui=NONE
-highlight CtrlPMode1 guifg=#f39660 guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight CtrlPMode2 guifg=#141415 guibg=#7dc3bd guisp=NONE blend=NONE gui=NONE
-highlight CursorColumn guifg=NONE guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight CursorLine guifg=NONE guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight CtrlPMode1 guifg=#f39660 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight CtrlPMode2 guifg=#111112 guibg=#7dc3bd guisp=NONE blend=NONE gui=NONE
+highlight CursorColumn guifg=NONE guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight CursorLine guifg=NONE guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight CursorLineNr guifg=#7eb2dd guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link pythonDecorator Define
 highlight! link @lsp.type.decorator Define
 highlight DiagnosticError guifg=#ff3d5b guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticHint guifg=#9c8cc3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticInfo guifg=#7eb2dd guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight DiagnosticSignError guifg=#ff3d5b guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight DiagnosticSignHint guifg=#9c8cc3 guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight DiagnosticSignInfo guifg=#7eb2dd guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight DiagnosticSignWarn guifg=#f39660 guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight DiagnosticSignError guifg=#ff3d5b guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight DiagnosticSignHint guifg=#9c8cc3 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight DiagnosticSignInfo guifg=#7eb2dd guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight DiagnosticSignWarn guifg=#f39660 guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight DiagnosticUnderlineError guifg=#ff3d5b guibg=#5f4448 guisp=NONE blend=NONE gui=undercurl
 highlight DiagnosticUnderlineHint guifg=#9c8cc3 guibg=#242b36 guisp=NONE blend=NONE gui=undercurl
 highlight DiagnosticUnderlineInfo guifg=#7eb2dd guibg=#242b36 guisp=NONE blend=NONE gui=undercurl
@@ -113,7 +113,7 @@ highlight Float guifg=#b1d072 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link pythonBinNumber Float
 highlight! link pythonHexNumber Float
 highlight! link pythonOctNumber Float
-highlight FoldColumn guifg=NONE guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight FoldColumn guifg=NONE guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight Folded guifg=#7eb2dd guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
 highlight Function guifg=#7eb2dd guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link StartifyFile Function
@@ -123,10 +123,11 @@ highlight! link cssFunction Function
 highlight! link cssFunctionName Function
 highlight! link htmlArg Function
 highlight! link pythonFunction Function
-highlight GitGutterAdd guifg=#83d28d guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight GitGutterChange guifg=#f39660 guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight GitGutterChangeDelete guifg=#e7c664 guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight GitGutterDelete guifg=#fc5d7c guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight GitGutterAdd guifg=#83d28d guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight GitGutterChange guifg=#f39660 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight GitGutterChangeDelete guifg=#e7c664 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight GitGutterDelete guifg=#fc5d7c guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight HighlightSubtle guifg=NONE guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight Identifier guifg=#7dc3bd guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link StartifyFooter Identifier
 highlight! link StartifyHeader Identifier
@@ -139,12 +140,12 @@ highlight! link jsVariableDef Identifier
 highlight! link yamlTagHandle Identifier
 highlight! link yamlTagPrefix Identifier
 highlight Ignore guifg=#33353f guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight IncSearch guifg=#141415 guibg=#f39660 guisp=NONE blend=NONE gui=NONE
+highlight IncSearch guifg=#111112 guibg=#f39660 guisp=NONE blend=NONE gui=NONE
 highlight! link CurSearch IncSearch
 highlight! link @punctuation.special.markdown Keyword
-highlight LineNr guifg=#4f5462 guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight LineNr guifg=#4f5462 guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight! link @lsp.typemod.macro.defaultLibrary Macro
-highlight MatchParen guifg=#141415 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
+highlight MatchParen guifg=#111112 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
 highlight ModeMsg guifg=#56eded guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight MoreMsg guifg=#83d28d guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight Noise guifg=#7f8490 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -164,7 +165,8 @@ highlight! link pythonDot Noise
 highlight! link @punctuation.bracket Noise
 highlight! link @punctuation.delimiter Noise
 highlight NonText guifg=#33353f guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight NormalFloat guifg=#c5c8c6 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight NormalFloat guifg=#c5c8c6 guibg=#010102 guisp=NONE blend=NONE gui=NONE
+highlight NormalNC guifg=#4f5462 guibg=#111112 guisp=NONE blend=NONE gui=NONE
 highlight Number guifg=#83d28d guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link javaScriptNumber Number
 highlight Operator guifg=#f39660 guibg=NONE guisp=NONE blend=NONE gui=NONE
@@ -179,7 +181,7 @@ highlight! link jinjaVarBlock Operator
 highlight! link makeCommands Operator
 highlight Pmenu guifg=#4f5462 guibg=#25262c guisp=NONE blend=NONE gui=NONE
 highlight PmenuSbar guifg=NONE guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
-highlight PmenuSel guifg=#141415 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
+highlight PmenuSel guifg=#111112 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
 highlight PmenuThumb guifg=NONE guibg=#4f5462 guisp=NONE blend=NONE gui=NONE
 highlight PreProc guifg=#83d28d guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link Define PreProc
@@ -188,8 +190,8 @@ highlight! link Macro PreProc
 highlight! link PreCondit PreProc
 highlight! link cssPseudoClass PreProc
 highlight Question guifg=#f39660 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight Search guifg=#141415 guibg=#e7c664 guisp=NONE blend=NONE gui=NONE
-highlight SignColumn guifg=NONE guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight Search guifg=#111112 guibg=#e7c664 guisp=NONE blend=NONE gui=NONE
+highlight SignColumn guifg=NONE guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight Special guifg=#9c8cc3 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link Debug Special
 highlight! link SpecialChar Special
@@ -218,11 +220,11 @@ highlight! link javaScriptFunction Statement
 highlight! link jsonKeyword Statement
 highlight! link yamlBlockMappingKey Statement
 highlight! link yamlFlowMappingKey Statement
-highlight StatusLine guifg=#4f5462 guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight StatusLineDefault guifg=#141415 guibg=#7dc3bd guisp=NONE blend=NONE gui=NONE
-highlight StatusLineFlag guifg=#f39660 guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight StatusLineHighlight guifg=#56eded guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight StatusLineInsert guifg=#141415 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
+highlight StatusLine guifg=#4f5462 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineDefault guifg=#111112 guibg=#7dc3bd guisp=NONE blend=NONE gui=NONE
+highlight StatusLineFlag guifg=#f39660 guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineHighlight guifg=#56eded guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineInsert guifg=#111112 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
 highlight StatusLineMid guifg=#7f8490 guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineMidBlue guifg=#7eb2dd guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineMidGreen guifg=#83d28d guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
@@ -233,9 +235,9 @@ highlight StatusLineNC guifg=#4f5462 guibg=#25262c guisp=NONE blend=NONE gui=NON
 highlight StatusLineNCLight guifg=#33353f guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineNCMid guifg=#4f5462 guibg=#2c2e34 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineNCRedFlag guifg=#fc5d7c guibg=#25262c guisp=NONE blend=NONE gui=NONE
-highlight StatusLineNormal guifg=#141415 guibg=#fc5d7c guisp=NONE blend=NONE gui=NONE
-highlight StatusLineRedFlag guifg=#fc5d7c guibg=#18181a guisp=NONE blend=NONE gui=NONE
-highlight StatusLineReplace guifg=#141415 guibg=#9c8cc3 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineNormal guifg=#111112 guibg=#fc5d7c guisp=NONE blend=NONE gui=NONE
+highlight StatusLineRedFlag guifg=#fc5d7c guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineReplace guifg=#111112 guibg=#9c8cc3 guisp=NONE blend=NONE gui=NONE
 highlight! link BufTabLineActive StatusLineTabActive
 highlight! link BufTabLineCurrent StatusLineTabCurrent
 highlight! link BufTabLineHidden StatusLineTabHidden
@@ -243,9 +245,9 @@ highlight StatusLineTabModifiedActive guifg=#5f4448 guibg=#2c2e34 guisp=NONE ble
 highlight! link BufTabLineModifiedActive StatusLineTabModifiedActive
 highlight StatusLineTabModifiedCurrent guifg=#fc5d7c guibg=#242b36 guisp=NONE blend=NONE gui=NONE
 highlight! link BufTabLineModifiedCurrent StatusLineTabModifiedCurrent
-highlight StatusLineTabModifiedHidden guifg=#5f4448 guibg=#111112 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineTabModifiedHidden guifg=#5f4448 guibg=#010102 guisp=NONE blend=NONE gui=NONE
 highlight! link BufTabLineModifiedHidden StatusLineTabModifiedHidden
-highlight StatusLineVisual guifg=#141415 guibg=#f39660 guisp=NONE blend=NONE gui=NONE
+highlight StatusLineVisual guifg=#111112 guibg=#f39660 guisp=NONE blend=NONE gui=NONE
 highlight String guifg=#e7c664 guibg=NONE guisp=NONE blend=NONE gui=NONE
 highlight! link Character String
 highlight! link cssStringQ String
@@ -257,9 +259,9 @@ highlight! link @tag TSTag
 highlight! link @tag.attribute TSTagAttribute
 highlight! link @tag.delimiter TSTagDelimiter
 highlight TSURI guifg=#7dc3bd guibg=NONE guisp=NONE blend=NONE gui=underline
-highlight TabLine guifg=#4f5462 guibg=#111112 guisp=NONE blend=NONE gui=NONE
+highlight TabLine guifg=#4f5462 guibg=#010102 guisp=NONE blend=NONE gui=NONE
 highlight! link StatusLineTabHidden TabLine
-highlight TabLineFill guifg=#4f5462 guibg=#18181a guisp=NONE blend=NONE gui=NONE
+highlight TabLineFill guifg=#4f5462 guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight! link BufTabLineFill TabLineFill
 highlight! link StatusLineTabActive TabLineFill
 highlight TabLineSel guifg=#56eded guibg=#242b36 guisp=NONE blend=NONE gui=NONE
@@ -287,7 +289,7 @@ highlight! link ALEWarningSign WarningMsg
 highlight! link StartifyNumber WarningMsg
 highlight! link YcmWarningSign WarningMsg
 highlight Whitespace guifg=#5f4448 guibg=NONE guisp=NONE blend=NONE gui=NONE
-highlight WildMenu guifg=#141415 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
+highlight WildMenu guifg=#111112 guibg=#7eb2dd guisp=NONE blend=NONE gui=NONE
 highlight YCMInverse guifg=#56eded guibg=NONE guisp=NONE blend=NONE gui=bold,underline
 highlight! link sassCssAttribute cssAttr
 highlight! link sassClass cssClassName
@@ -295,7 +297,7 @@ highlight! link sassMixinName cssFunctionName
 highlight! link sassId cssIdentifier
 highlight! link sassProperty cssProp
 highlight! link sassVariable cssStringQ
-highlight floatBorder guifg=#33353f guibg=#141415 guisp=NONE blend=NONE gui=NONE
+highlight floatBorder guifg=#33353f guibg=#111112 guisp=NONE blend=NONE gui=NONE
 highlight htmlBold guifg=NONE guibg=NONE guisp=NONE blend=NONE gui=bold
 highlight htmlBoldItalic guifg=#d185b3 guibg=NONE guisp=NONE blend=NONE gui=bold,italic
 highlight htmlEndTag guifg=#5f4448 guibg=NONE guisp=NONE blend=NONE gui=NONE

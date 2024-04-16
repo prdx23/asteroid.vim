@@ -4,12 +4,15 @@ local hsl = lush.hsl
 
 -- color palette --------------
 
-local bg = '#141415'
+-- local bg = '#141415'
+local bg = '#111112'
+local bglight = '#141415'
 local fg = '#c5c8c6'
 
 local selection = '#414550'
 
-local darkest = '#111112'
+-- local darkest = '#111112'
+local darkest = '#010102'
 local dark0 = '#18181a'
 local dark1 = '#25262c'
 local dark2 = '#2c2e34'
@@ -43,6 +46,9 @@ local dullyellow = '#4e432f'
 local dullgreen = '#43634e'
 local dullblue = '#242b36'
 
+
+local status_bg = bglight
+
 --------------------------------
 
 
@@ -54,17 +60,18 @@ local theme = lush(function(injected_functions)
 ---------- Base Vim and NeoVim UI----------------------------------------------
 
         Normal       { fg=fg, bg=bg }, -- Normal text
-        ColorColumn  { bg=dark0 }, -- Columns set with 'colorcolumn'
+        ColorColumn  { bg=status_bg }, -- Columns set with 'colorcolumn'
         Conceal      { bg=dark2 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-        NormalFloat  { fg=fg, bg=bg }, -- Normal text in floating windows.
+        NormalFloat  { fg=fg, bg=darkest }, -- Normal text in floating windows.
         floatBorder  { fg=light1, bg=bg }, -- Normal text in floating windows.
         -- NormalNC     { Normal }, -- normal text in non-current windows
+        NormalNC     { fg=light2, bg=bg }, -- normal text in non-current windows
 
         -- Cursor       { }, -- Character under the cursor
         -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
-        CursorColumn { bg=dark0 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorLine   { bg=dark0 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+        CursorColumn { bg=status_bg }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+        CursorLine   { bg=status_bg }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
         -- TermCursor   { }, -- Cursor in a focused terminal
         -- TermCursorNC { }, -- Cursor in an unfocused terminal
 
@@ -79,15 +86,15 @@ local theme = lush(function(injected_functions)
         -- EndOfBuffer  { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
         VertSplit    { fg=dark1 }, -- Column separating vertically split windows
         Folded       { fg=lightblue, bg=dark2 }, -- Line used for closed folds
-        FoldColumn   { bg=dark0 }, -- 'foldcolumn'
-        SignColumn   { bg=dark0 }, -- Column where |signs| are displayed
+        FoldColumn   { bg=status_bg }, -- 'foldcolumn'
+        SignColumn   { bg=status_bg }, -- Column where |signs| are displayed
 
         IncSearch    { fg=bg, bg=orange }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Search       { fg=bg, bg=yellow }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
         CurSearch    { IncSearch }, -- Current highlighted search
         -- Substitute   { }, -- |:substitute| replacement text highlighting
 
-        LineNr       { fg=light2, bg=dark0 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+        LineNr       { fg=light2, bg=status_bg }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         CursorLineNr { fg=lightblue }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         MatchParen   { fg=bg, bg=lightblue }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 
@@ -112,7 +119,7 @@ local theme = lush(function(injected_functions)
         SpellRare    { fg=lightblue, gui='undercurl,italic' }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
 
         TabLine      { fg=light2, bg=darkest }, -- Tab pages line, not active tab page label
-        TabLineFill  { fg=light2, bg=dark0 }, -- Tab pages line, where there are no labels
+        TabLineFill  { fg=light2, bg=status_bg }, -- Tab pages line, where there are no labels
         TabLineSel   { fg=cyan, bg=dullblue }, -- Tab pages line, active tab page label
 
         Title        { fg=cyan }, -- Titles for output from ":set all", ":autocmd" etc.
@@ -201,10 +208,10 @@ local theme = lush(function(injected_functions)
         -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
         -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.
         -- DiagnosticFloatingHint     { } , -- Used to color "Hint" diagnostic messages in diagnostics float.
-        DiagnosticSignError        { DiagnosticError, bg=dark0 } , -- Used for "Error" signs in sign column.
-        DiagnosticSignWarn         { DiagnosticWarn, bg=dark0 } , -- Used for "Warn" signs in sign column.
-        DiagnosticSignInfo         { DiagnosticInfo, bg=dark0 } , -- Used for "Info" signs in sign column.
-        DiagnosticSignHint         { DiagnosticHint, bg=dark0 } , -- Used for "Hint" signs in sign column.
+        DiagnosticSignError        { DiagnosticError, bg=status_bg } , -- Used for "Error" signs in sign column.
+        DiagnosticSignWarn         { DiagnosticWarn,  bg=status_bg } , -- Used for "Warn" signs in sign column.
+        DiagnosticSignInfo         { DiagnosticInfo,  bg=status_bg } , -- Used for "Info" signs in sign column.
+        DiagnosticSignHint         { DiagnosticHint,  bg=status_bg } , -- Used for "Hint" signs in sign column.
 
         -- sym("@lsp.type.class") { Structure } ,
         sym("@lsp.type.decorator") { Define } ,
@@ -326,7 +333,7 @@ local theme = lush(function(injected_functions)
 
 ---------- Statusline Custom --------------------------------------------------
 
-        StatusLine                          { fg=light2, bg=dark0 }, -- Status line of current window
+        StatusLine                          { fg=light2, bg=status_bg }, -- Status line of current window
         StatusLineNC                        { fg=light2, bg=dark1 }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
         StatusLineNormal                    { fg=bg, bg=red },
@@ -345,9 +352,9 @@ local theme = lush(function(injected_functions)
         StatusLineNCMid                     { fg=light2, bg=dark2 },
         StatusLineNCLight                   { fg=light1, bg=dark2 },
 
-        StatusLineHighlight                 { fg=cyan, bg=dark0 },
-        StatusLineFlag                      { fg=orange, bg=dark0 },
-        StatusLineRedFlag                   { fg=red, bg=dark0 },
+        StatusLineHighlight                 { fg=cyan, bg=status_bg },
+        StatusLineFlag                      { fg=orange, bg=status_bg },
+        StatusLineRedFlag                   { fg=red, bg=status_bg },
         StatusLineNCRedFlag                 { fg=red, bg=dark1 },
 
         StatusLineTabCurrent                { TabLineSel },
@@ -394,10 +401,10 @@ local theme = lush(function(injected_functions)
 
 ---------- Plugin: vim-gitgutter ----------------------------------------------
 
-        GitGutterAdd               { fg=green, bg=dark0 } ,
-        GitGutterChange            { fg=orange, bg=dark0 } ,
-        GitGutterDelete            { fg=red, bg=dark0 } ,
-        GitGutterChangeDelete      { fg=yellow, bg=dark0 } ,
+        GitGutterAdd               { fg=green,  bg=status_bg } ,
+        GitGutterChange            { fg=orange, bg=status_bg } ,
+        GitGutterDelete            { fg=red,    bg=status_bg } ,
+        GitGutterChangeDelete      { fg=yellow, bg=status_bg } ,
 
 
 ---------- Plugin: ALE --------------------------------------------------------
@@ -443,7 +450,7 @@ local theme = lush(function(injected_functions)
         CtrlPBufferCurMod    { Error } ,
         CtrlPBufferPath      { Comment } ,
 
-        CtrlPMode1           { fg=orange, bg=dark0 } ,
+        CtrlPMode1           { fg=orange, bg=status_bg } ,
         CtrlPMode2           { fg=bg, bg=blue } ,
         -- CtrlPStats           { } ,
 
