@@ -7,16 +7,17 @@ asteroid is a dark 24-bit truecolor colorscheme for neovim and vim.
 
 # Install
 
-### Native vim package (vim 8+)
-Run the following command to install:
-``` sh
-git clone https://github.com/prdx23/asteroid.vim ~/.vim/pack/plugins/start/asteroid.vim
-```
-
-### [vundle](https://github.com/VundleVim/Vundle.vim)
-Add to your `.vimrc`:
-``` vim
-Plugin 'prdx23/asteroid.vim'
+### [lazy.nvim](https://github.com/folke/lazy.nvim)
+Add to your `init.lua`:
+``` lua
+{
+    "prdx23/asteroid.vim",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+        vim.cmd.colorscheme("asteroid")
+    end
+},
 ```
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
@@ -25,10 +26,10 @@ Add to your `.vimrc`:
 Plug 'prdx23/asteroid.vim'
 ```
 
-### [pathogen](https://github.com/tpope/vim-pathogen)
+### Native vim package (vim 8+)
 Run the following command to install:
 ``` sh
-git clone https://github.com/prdx23/asteroid.vim ~/.vim/bundle/asteroid.vim
+git clone https://github.com/prdx23/asteroid.vim ~/.vim/pack/plugins/start/asteroid.vim
 ```
 
 ### Manual Install
@@ -50,24 +51,7 @@ endif
 colorscheme asteroid
 ```
 
-### Airline theme
-asteroid includes a theme for airline, to use it add the following to
-your `.vimrc`:
-``` vim
-let g:asteroid_airline = 1
-let g:airline_theme = 'asteroid'
-```
-
-### Lightline theme
-asteroid includes a theme for lightline, to use it add the following to
-your `.vimrc`:
-``` vim
-let g:asteroid_lightline = 1
-" set lighline theme (in your lightline config)
-let g:lightline = { 'colorscheme': 'asteroid' }
-```
-
-# Credits
+# Acknowledgement
 
 - Themes that inspired me:
     - [mhartington/oceanic-next](https://github.com/mhartington/oceanic-next)
@@ -79,4 +63,4 @@ let g:lightline = { 'colorscheme': 'asteroid' }
 
 
 ---
-**MIT License**: Copyright (c) 2022 Arsh   |  [License.txt](https://github.com/prdx23/asteroid.vim/blob/master/LICENSE.txt)
+**MIT License**: Copyright (c) Arsh   |  [License.txt](https://github.com/prdx23/asteroid.vim/blob/master/LICENSE.txt)

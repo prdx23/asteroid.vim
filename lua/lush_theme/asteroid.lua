@@ -27,7 +27,8 @@ local red = '#fc5d7c'
 -- local pink = '#df77b6'
 local pink = '#d185b3'
 local orange = '#f39660'
-local yellow = '#e7c664'
+-- local yellow = '#e7c664'
+local yellow = '#f0c674'
 -- local green = '#9ed072'
 local green = '#83d28d'
 -- local olivegreen = '#9ed072'
@@ -37,6 +38,7 @@ local blue = '#7dc3bd'
 local lightblue = '#7eb2dd'
 -- local cyan = '#56ffff'
 local cyan = '#56eded'
+-- local cyan = '#74e7e7'
 local aqua = '#00bcbc'
 -- local purple = '#b39df3'
 local purple = '#9c8cc3'
@@ -92,7 +94,7 @@ local theme = lush(function(injected_functions)
         IncSearch    { fg=bg, bg=orange }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Search       { fg=bg, bg=yellow }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
         CurSearch    { IncSearch }, -- Current highlighted search
-        -- Substitute   { }, -- |:substitute| replacement text highlighting
+        Substitute   { fg=orange, bg=dullblue }, -- |:substitute| replacement text highlighting
 
         LineNr       { fg=light2, bg=status_bg }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         CursorLineNr { fg=lightblue }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -177,9 +179,9 @@ local theme = lush(function(injected_functions)
         Underlined     { fg=blue, gui = "underline" }, -- Text that stands out, HTML links
         Ignore         { fg=light1 }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
         Error          { fg=brightred, bg=dullblue }, -- Any erroneous construct
-        Todo           { fg=orange, bg=dark1 }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+        Todo           { fg=orange, bg=dullblue }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
----------- NVIM LSP -----------------------------------------------------------
+---------- NVIM Diagnostics -----------------------------------------------------------
 
         -- LspReferenceText            { } , -- Used for highlighting "text" references
         -- LspReferenceRead            { } , -- Used for highlighting "read" references
@@ -213,123 +215,189 @@ local theme = lush(function(injected_functions)
         DiagnosticSignInfo         { DiagnosticInfo,  bg=status_bg } , -- Used for "Info" signs in sign column.
         DiagnosticSignHint         { DiagnosticHint,  bg=status_bg } , -- Used for "Hint" signs in sign column.
 
-        -- sym("@lsp.type.class") { Structure } ,
-        sym("@lsp.type.decorator") { Define } ,
-        -- sym("@lsp.type.enum") { Structure } ,
-        -- sym("@lsp.type.enumMember") { Constant } ,
-        -- sym("@lsp.type.function") { Function } ,
-        -- sym("@lsp.type.interface") { Structure } ,
-        -- sym("@lsp.type.macro") { Macro } ,
-        -- sym("@lsp.type.method") { Function } ,
-        sym("@lsp.type.namespace") { Special } ,
-        -- sym("@lsp.type.parameter") { Identifier } ,
-        -- sym("@lsp.type.property") { Identifier } ,
-        -- sym("@lsp.type.struct") { Structure } ,
-        -- sym("@lsp.type.type") { Type } ,
-        -- sym("@lsp.type.typeParameter") { Typedef } ,
-        sym("@lsp.type.variable") { Normal } ,
-
-        -- sym("@lsp.mod.declaration") { } ,
-        -- sym("@lsp.mod.definition") { } ,
-        -- sym("@lsp.mod.readonly") { } ,
-        -- sym("@lsp.mod.static") { } ,
-        sym("@lsp.mod.deprecated") { fg=dullyellow } ,
-        -- sym("@lsp.mod.abstract") { } ,
-        -- sym("@lsp.mod.async") { } ,
-        -- sym("@lsp.mod.modification") { } ,
-        -- sym("@lsp.mod.mutable") { } ,
-        -- sym("@lsp.mod.documentation") { } ,
-        sym("@lsp.mod.defaultLibrary") { Builtin } ,
-        sym("@lsp.mod.constant") { Constant } ,
-
-        sym("@lsp.typemod.class.defaultLibrary") { Structure } ,
-        sym("@lsp.typemod.macro.defaultLibrary") { Macro } ,
 
 ---------- NVIM Treesitter --------------------------------------------------------
+
+
+        -- nvim v0.10.0 update
+
+
+        -- sym("@variable") {  } , -- various variable names
+        -- sym("@variable.builtin") { } , -- built-in variable names (e.g. `this`, `self`)
+        sym("@variable.parameter") { Identifier } , -- parameters of a function
+        -- sym("@variable.parameter.builtin") {  } , -- special parameters (e.g. `_`, `it`)
+        sym("@variable.member") { Identifier } , -- object and struct fields
+
+
+        -- sym("@constant") {  } , -- constant identifiers
+        -- sym("@constant.builtin") {  } , -- built-in constant values
+        sym("@constant.macro") { Macro } , -- constants defined by the preprocessor
+
+
+        sym("@module") { Special } , -- modules or namespaces
+        -- sym("@module.builtin") { } , -- built-in modules or namespaces
+        -- sym("@label") {  } , -- `GOTO` and other labels (e.g. `label:` in C), including heredoc labels
+
+
+        -- sym("@string") { } , -- string literals
+        sym("@string.documentation") { Noise } , -- string documenting code (e.g. Python docstrings)
+        -- sym("@string.regexp") { } , -- regular expressions
+        sym("@string.escape") { Whitespace } , -- escape sequences
+        -- sym("@string.special") { } , -- other special strings (e.g. dates)
+        -- sym("@string.special.symbol") { } , -- symbols or atoms
+        -- sym("@string.special.path") { } , -- filenames
+        -- sym("@string.special.url") { } , -- URIs (e.g. hyperlinks)
+
+
+        -- sym("@character") { } ,  -- character literals
+        -- sym("@character.special") { } ,  -- special characters (e.g. wildcards)
+
+
+        -- sym("@boolean") { } ,  -- boolean literals
+        -- sym("@number") { } ,  -- numeric literals
+        -- sym("@number.float") { } ,  -- floating-point number literals
+
+
+        -- sym("@type") { } ,  -- type or class definitions and annotations
+        sym("@type.builtin") { Builtin } ,  -- built-in types
+        -- sym("@type.definition") { } ,  -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+
+
+        -- sym("@attribute") { } ,  -- attribute annotations (e.g. Python decorators, Rust lifetimes)
+        sym("@attribute.builtin") { Builtin } ,  -- builtin annotations (e.g. `@property` in Python)
+        -- sym("@property") { } , -- the key in key/value pairs
+
+
+        -- sym("@function") { } ,  -- function definitions
+        sym("@function.builtin") { Builtin } ,  -- built-in functions
+        -- sym("@function.call") { } ,  -- function calls
+        sym("@function.macro") { Macro } ,  -- preprocessor macros
+
+
+        -- sym("@function.method") { } ,  -- method definitions
+        -- sym("@function.method.call") { } ,  -- method calls
+
+
+        -- sym("@constructor") { } ,  -- constructor calls and definitions
+        -- sym("@operator") { } ,  -- symbolic operators (e.g. `+`, `*`)
+
+
+        -- sym("@keyword") { } ,  -- keywords not fitting into specific categories
+        -- sym("@keyword.coroutine") { } ,  -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+        -- sym("@keyword.function") { } ,  -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+        -- sym("@keyword.operator") { Operator } ,  -- operators that are English words (e.g. `and`, `or`)
+        -- sym("@keyword.import") { } ,  -- keywords for including modules (e.g. `import`, `from` in Python)
+        -- sym("@keyword.type") { } ,  -- keywords defining composite types (e.g. `struct`, `enum`)
+        -- sym("@keyword.modifier") { } ,  -- keywords defining type modifiers (e.g. `const`, `static`, `public`)
+        -- sym("@keyword.repeat") { } ,  -- keywords related to loops (e.g. `for`, `while`)
+        -- sym("@keyword.return") { } ,  -- keywords like `return` and `yield`
+        -- sym("@keyword.debug") { } ,  -- keywords related to debugging
+        -- sym("@keyword.exception") { } ,  -- keywords related to exceptions (e.g. `throw`, `catch`)
+
+        -- sym("@keyword.conditional") { } ,  -- keywords related to conditionals (e.g. `if`, `else`)
+        -- sym("@keyword.conditional.ternary") { } , -- ternary operator (e.g. `?`, `:`)
+
+        -- sym("@keyword.directive") { } ,  -- various preprocessor directives and shebangs
+        -- sym("@keyword.directive.define") { } ,  -- preprocessor definition directives
+
+
+        -- sym("@punctuation") { Noise } ,  --
+        sym("@punctuation.delimiter") { Noise } ,  -- delimiters (e.g. `;`, `.`, `,`)
+        sym("@punctuation.bracket") { Noise } ,  -- brackets (e.g. `()`, `{}`, `[]`)
+        -- sym("@punctuation.special") { } ,  -- special symbols (e.g. `{}` in string interpolation)
+        sym("@punctuation.special.markdown") { Statement } , -- override special for md files
+
+
+        -- sym("@comment") { } ,  -- line and block comments
+        -- sym("@comment.documentation") { } , -- comments documenting code
+
+
+        sym("@comment.error") { Error } ,  -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
+        sym("@comment.warning") { Todo } ,  -- warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
+        -- sym("@comment.todo") { } ,  -- todo-type comments (e.g. `TODO`, `WIP`)
+        sym("@comment.note") { fg=lightblue, bg=dullblue } ,  -- note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
+
+
+        -- sym("@markup.strong") { } ,  -- bold text
+        -- sym("@markup.italic") { } ,  -- italic text
+        -- sym("@markup.strikethrough") { } ,   struck-through text
+        -- sym("@markup.underline") { } ,  -- underlined text (only for literal underline markup!)
+
+        -- sym("@markup.heading")   {  } ,  -- headings, titles (including markers)
+        -- sym("@markup.heading.1") {  } ,  -- top-level heading
+        sym("@markup.heading.2") { Identifier } ,  -- section heading
+        sym("@markup.heading.3") { Identifier } ,  -- subsection heading
+        sym("@markup.heading.4") { Identifier } ,  -- and so on
+        sym("@markup.heading.5") { Identifier } ,  -- and so forth
+        sym("@markup.heading.6") { Identifier } ,  -- six levels ought to be enough for anybody
+
+        sym("@markup.quote") { Label } ,  -- block quotes
+        sym("@markup.math") { Constant } ,  -- math environments (e.g. `$ ... $` in LaTeX)
+
+        -- sym("@markup.link") { } ,  -- text references, footnotes, citations, etc.
+        -- sym("@markup.link.label") { } ,  -- link, reference descriptions
+        -- sym("@markup.link.url") { } ,  -- URL-style links
+
+        -- sym("@markup.raw") { } ,  -- literal or verbatim text (e.g. inline code)
+        -- sym("@markup.raw.block") { } ,  -- literal or verbatim text as a stand-alone block
+
+        sym("@markup.list") { Keyword } ,  -- list markers
+        sym("@markup.list.checked") { Number } ,  -- checked todo-style list markers
+        -- sym("@markup.list.unchecked") { DiffDelete } ,  -- unchecked todo-style list markers
+
+        sym("@diff.plus")  { DiffAdd } ,  -- added text (for diff files)
+        sym("@diff.minus") { DiffDelete } ,  -- deleted text (for diff files)
+        sym("@diff.delta") { DiffText } ,  -- changed text (for diff files)
+
+        -- sym("@tag") { } ,  -- XML-style tag names (e.g. in XML, HTML, etc.)
+        sym("@tag.builtin") { Statement } ,  -- XML-style tag names (e.g. HTML5 tags)
+        sym("@tag.attribute") { Identifier } ,  -- XML-style tag attributes
+        sym("@tag.delimiter") { Comment } ,  -- XML-style tag delimiters
+
+
         -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
 
-        -- TSAttribute          { } , -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-        -- TSBoolean            { } , -- Boolean literals: `True` and `False` in Python.
-        -- TSCharacter          { } , -- Character literals: `'a'` in C.
-        -- TSCharacterSpecial   { } , -- Special characters.
-        -- TSComment            { } , -- Line comments and block comments.
-        -- TSConditional        { } , -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-        -- TSConstant           { } , -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
-        TSConstBuiltin       { Constant } , -- Built-in constant values: `nil` in Lua.
-        sym("@constant.builtin") { Constant } ,
-        -- TSConstMacro         { } , -- Constants defined by macros: `NULL` in C.
-        -- TSConstructor        { } , -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
-        -- TSDebug              { } , -- Debugging statements.
-        -- TSDefine             { } , -- Preprocessor #define statements.
-        -- TSError              { } , -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
-        -- TSException          { } , -- Exception related keywords: `try`, `except`, `finally` in Python.
-        -- TSField              { } , -- Object and struct fields.
-        -- TSFloat              { } , -- Floating-point number literals.
-        -- TSFunction           { } , -- Function calls and definitions.
-        TSFuncBuiltin        { Builtin } , -- Built-in functions: `print` in Lua.
-        sym("@function.builtin") { Builtin } ,
-        -- TSFuncMacro          { } , -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-        -- TSInclude            { } , -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-        -- TSKeyword            { } , -- Keywords that don't fit into other categories.
-        -- TSKeywordFunction    { } , -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-        -- TSKeywordOperator    { } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-        -- TSKeywordReturn      { } , -- Keywords like `return` and `yield`.
-        -- TSLabel              { } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
-        -- TSMethod             { } , -- Method calls and definitions.
-        TSNamespace          { Special } , -- Identifiers referring to modules and namespaces.
-        sym("@namespace") { Special } ,
-        -- TSNone               { } , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
-        -- TSNumber             { } , -- Numeric literals that don't fit into other categories.
-        -- TSOperator           { } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
-        -- TSParameter          { } , -- Parameters of a function.
-        TSParameterReference { Special } , -- References to parameters of a function.
-        sym("@parameter.reference") { Special } ,
-        -- TSPreProc            { } , -- Preprocessor #if, #else, #endif, etc.
-        -- TSProperty           { } , -- Same as `TSField`.
-        TSPunctDelimiter     { Noise } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
-        sym("@punctuation.delimiter") { Noise } ,
-        TSPunctBracket       { Noise } , -- Brackets, braces, parentheses, etc.
-        sym("@punctuation.bracket") { Noise } ,
-        -- TSPunctSpecial       { } , -- Special punctuation that doesn't fit into the previous categories.
-        -- TSRepeat             { } , -- Keywords related to loops: `for`, `while`, etc.
-        -- TSStorageClass       { } , -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc.
-        -- TSString             { } , -- String literals.
-        -- TSStringRegex        { } , -- Regular expression literals.
-        -- TSStringEscape       { } , -- Escape characters within a string: `\n`, `\t`, etc.
-        -- TSStringSpecial      { } , -- Strings with special meaning that don't fit into the previous categories.
-        -- TSSymbol             { } , -- Identifiers referring to symbols or atoms.
-        TSTag                { Statement } , -- Tags like HTML tag names.
-        sym("@tag") { TSTag } ,
-        TSTagAttribute       { Function } , -- HTML tag attributes.
-        sym("@tag.attribute") { TSTagAttribute } ,
-        TSTagDelimiter       { Noise } , -- Tag delimiters like `<` `>` `/`.
-        sym("@tag.delimiter") { TSTagDelimiter } ,
-        -- TSText               { } , -- Non-structured text. Like text in a markup language.
-        -- TSStrong             { } , -- Text to be represented in bold.
-        -- TSEmphasis           { } , -- Text to be represented with emphasis.
-        -- TSUnderline          { } , -- Text to be represented with an underline.
-        -- TSStrike             { } , -- Strikethrough text.
-        -- TSTitle              { } , -- Text that is part of a title.
-        -- TSLiteral            { } , -- Literal or verbatim text.
-        TSURI                { fg=blue, gui='underline' } , -- URIs like hyperlinks or email addresses.
-        sym("@text.uri") { fg=blue, gui='underline' } ,
-        TSMath               { Constant } , -- Math environments like LaTeX's `$ ... $`
-        sym("@text.math") { Constant } ,
-        TSTextReference      { Special } , -- Footnotes, text references, citations, etc.
-        sym("@text.reference") { Special } ,
-        -- TSEnvironment        { } , -- Text environments of markup languages.
-        -- TSEnvironmentName    { } , -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
-        -- TSNote               { } , -- Text representation of an informational note.
-        -- TSWarning            { } , -- Text representation of a warning note.
-        TSDanger             { Error } , -- Text representation of a danger note.
-        sym("@danger") { TSDanger } ,
-        sym("@text.danger") { TSDanger } ,
-        -- TSType               { } , -- Type (and class) definitions and annotations.
-        -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
-        TSVariable           { Normal } , -- Variable names that don't fit into other categories.
-        sym("@variable") { Normal } ,
-        TSVariableBuiltin    { Builtin } , -- Variable names defined by the language: `this` or `self` in Javascript.
-        sym("@variable.builtin") { Builtin } ,
+
+---------- NVIM LSP Semantic --------------------------------------------------------
+
+        -- nvim v0.10.0 update
+
+        -- sym("@lsp.type.class") { } ,  -- Identifiers that declare or reference a class type
+        -- sym("@lsp.type.comment") { } ,  -- Tokens that represent a comment
+        -- sym("@lsp.type.decorator") { } ,  -- Identifiers that declare or reference decorators and annotations
+        -- sym("@lsp.type.enum") { } ,  -- Identifiers that declare or reference an enumeration type
+        -- sym("@lsp.type.enumMember") { } ,  -- Identifiers that declare or reference an enumeration property, constant, or member
+        -- sym("@lsp.type.event") { } ,  -- Identifiers that declare an event property
+        -- sym("@lsp.type.function") { } ,  -- Identifiers that declare a function
+        -- sym("@lsp.type.interface") { } ,  -- Identifiers that declare or reference an interface type
+        -- sym("@lsp.type.keyword") { } ,  -- Tokens that represent a language keyword
+        -- sym("@lsp.type.macro") { } ,  -- Identifiers that declare a macro
+        -- sym("@lsp.type.method") { } ,  -- Identifiers that declare a member function or method
+        -- sym("@lsp.type.modifier") { } ,  -- Tokens that represent a modifier
+        -- sym("@lsp.type.namespace") { } ,  -- Identifiers that declare or reference a namespace, module, or package
+        -- sym("@lsp.type.number") { } ,  -- Tokens that represent a number literal
+        -- sym("@lsp.type.operator") { } ,  -- Tokens that represent an operator
+        -- sym("@lsp.type.parameter") { } ,  -- Identifiers that declare or reference a function or method parameters
+        -- sym("@lsp.type.property") { } ,  -- Identifiers that declare or reference a member property, member field, or member variable
+        -- sym("@lsp.type.regexp") { } ,  -- Tokens that represent a regular expression literal
+        -- sym("@lsp.type.string") { } ,  -- Tokens that represent a string literal
+        -- sym("@lsp.type.struct") { } ,  -- Identifiers that declare or reference a struct type
+        -- sym("@lsp.type.type") { } ,  -- Identifiers that declare or reference a type that is not covered above
+        -- sym("@lsp.type.typeParameter") { } ,  -- Identifiers that declare or reference a type parameter
+        -- sym("@lsp.type.variable") { } ,  -- Identifiers that declare or reference a local or global variable
+
+        -- sym("@lsp.mod.abstract") { } ,  -- Types and member functions that are abstract
+        -- sym("@lsp.mod.async") { } ,  -- Functions that are marked async
+        -- sym("@lsp.mod.declaration") { } ,  -- Declarations of symbols
+        sym("@lsp.mod.defaultLibrary") { sym("@function.builtin") } ,  -- Symbols that are part of the standard library
+        -- sym("@lsp.mod.definition") { } ,  -- Definitions of symbols, for example, in header files
+        -- sym("@lsp.mod.deprecated") { fg=dullyellow, gui='strikethrough' } ,  -- Symbols that should no longer be used
+        -- sym("@lsp.mod.documentation") { } ,  -- Occurrences of symbols in documentation
+        -- sym("@lsp.mod.modification") { } ,  -- Variable references where the variable is assigned to
+        -- sym("@lsp.mod.readonly") { } ,  -- Readonly variables and member fields (constants)
+        -- sym("@lsp.mod.static") { } ,  -- Class members (static members)
+
+
 
 ---------- Statusline Custom --------------------------------------------------
 
@@ -372,17 +440,6 @@ local theme = lush(function(injected_functions)
         CmpItemKind                { fg=dullred } ,
         CmpItemMenu                { fg=dullyellow } ,
 
----------- Plugin: BufTabLine -------------------------------------------------
-        -- For plugin - https://github.com/ap/vim-buftabline
-
-        BufTabLineCurrent                { StatusLineTabCurrent } ,
-        BufTabLineActive                 { StatusLineTabActive } ,
-        BufTabLineHidden                 { StatusLineTabHidden } ,
-        BufTabLineFill                   { TabLineFill } ,
-        BufTabLineModifiedCurrent        { StatusLineTabModifiedCurrent } ,
-        BufTabLineModifiedActive         { StatusLineTabModifiedActive } ,
-        BufTabLineModifiedHidden         { StatusLineTabModifiedHidden } ,
-
 ---------- Plugin: telescope ---------------------------------------------------
 
         TelescopeSelection        { bg=dullblue } ,
@@ -399,190 +456,21 @@ local theme = lush(function(injected_functions)
         TelescopePromptPrefix     { fg=light2 } ,
 
 
----------- Plugin: vim-gitgutter ----------------------------------------------
+---------- Git Signs ----------------------------------------------
 
-        GitGutterAdd               { fg=green,  bg=status_bg } ,
-        GitGutterChange            { fg=orange, bg=status_bg } ,
-        GitGutterDelete            { fg=red,    bg=status_bg } ,
-        GitGutterChangeDelete      { fg=yellow, bg=status_bg } ,
+        GitSignsAdd               { fg=green,  bg=status_bg } ,
+        GitSignsChange            { fg=orange, bg=status_bg } ,
+        GitSignsDelete            { fg=red,    bg=status_bg } ,
+        GitSignsChangeDelete      { fg=yellow, bg=status_bg } ,
+        -- GitSignsTopdelete         { } ,
+        GitSignsUntracked         { Special } ,
+        -- GitSignsCurrentLineBlame  { } ,
 
+        GitGutterAdd               { GitSignsAdd } ,
+        GitGutterChange            { GitSignsChange } ,
+        GitGutterDelete            { GitSignsDelete } ,
+        GitGutterChangeDelete      { GitSignsChangeDelete } ,
 
----------- Plugin: ALE --------------------------------------------------------
-        -- For plugin - https://github.com/dense-analysis/ale
-
-        ALEError                         { DiffDelete } ,
-        ALEWarning                       { DiffText } ,
-        ALEInfo                          { fg=lightblue, bg=dullblue } ,
-        ALEErrorSign                     { Error } ,
-        ALEWarningSign                   { WarningMsg } ,
-        ALEInfoSign                      { Directory } ,
-
----------- Plugin: css syntax -------------------------------------------------
-
-        cssProp { Identifier } ,
-        cssAttr { Function } ,
-        cssSelectorOp   { Noise } ,
-        cssSelectorOp2  { Noise } ,
-        cssAttrComma    { Noise } ,
-        cssPseudoClass  { PreProc },
-        cssFunction     { Function },
-        cssFunctionComma { Noise },
-        cssIdentifier   { Operator },
-        cssBraces       { Noise },
-        cssClassName    { Operator },
-        cssClassNameDot { Noise },
-
----------- Plugin: ctrlp ------------------------------------------------------
-        -- For plugin - https://github.com/kien/ctrlp.vim
-
-        -- CtrlPNoEntries       { } ,
-        CtrlPMatch           { fg=cyan, bg=dullblue } ,
-        CtrlPLinePre         { fg=cyan } ,
-        -- CtrlPPrtBase         { } ,
-        CtrlPPrtText         { Constant } ,
-        CtrlPPrtCursor       { Title } ,
-
-        CtrlPBufferNr        { Operator } ,
-        CtrlPBufferInd       { Operator } ,
-        CtrlPBufferHidMod    { Error } ,
-        CtrlPBufferVisMod    { Error } ,
-        CtrlPBufferCur       { Type } ,
-        CtrlPBufferCurMod    { Error } ,
-        CtrlPBufferPath      { Comment } ,
-
-        CtrlPMode1           { fg=orange, bg=status_bg } ,
-        CtrlPMode2           { fg=bg, bg=blue } ,
-        -- CtrlPStats           { } ,
-
----------- Plugin: html syntax ------------------------------------------------
-        -- Includes highlights for - https://github.com/othree/html5.vim
-
-        htmlTag                 { fg=light3 } ,
-        htmlEndTag              { fg=dullred } ,
-        htmlArg                 { Function } ,
-        htmlSpecialTagName      { Constant } ,
-        htmlH1                  { Title } ,
-        htmlH2                  { htmlH1 } ,
-        htmlH3                  { Builtin } ,
-        htmlH4                  { htmlH3 } ,
-        htmlH5                  { htmlH4 } ,
-        htmlH6                  { htmlH5 } ,
-        htmlBold                { gui='bold' } ,
-        htmlItalic              { fg=pink, gui='italic' } ,
-        htmlBoldItalic          { fg=pink, gui='bold,italic' } ,
-
----------- Plugin: javascript syntax ------------------------------------------
-        -- Includes highlights for - https://github.com/pangloss/vim-javascript
-
-        javaScriptNumber              { Number } ,
-        javaScriptFunction            { Statement } ,
-        javaScriptError               { Error } ,
-        javaScriptBraces              { Noise } ,
-        javaScriptParens              { Noise } ,
-        javaScriptParensError         { javaScriptError } ,
-        javaScriptNull                { Constant } ,
-        javaScriptGlobal              { Builtin } ,
-        javaScriptMember              { Builtin } ,
-        javaScriptDeprecated          { DiffText } ,
-        javaScriptConstant            { Constant } ,
-        jsNumber                      { javaScriptNumber } ,
-        jsNull                        { javaScriptNull } ,
-        jsUndefined                   { javaScriptNull } ,
-        jsFunction                    { javaScriptFunction } ,
-        jsArrowFunction               { javaScriptFunction } ,
-        jsBuiltins                    { javaScriptGlobal } ,
-        jsGlobalObjects               { javaScriptGlobal } ,
-        jsGlobalNodeObjects           { javaScriptGlobal } ,
-        jsObjectKey                   { Identifier } ,
-        jsVariableDef                 { Identifier } ,
-        jsDestructuringBlock          { Identifier } ,
-        jsDestructuringArray          { Identifier } ,
-        jsModuleKeyword               { Identifier } ,
-
-
----------- Plugin: jinja2 syntax ------------------------------------------
-        -- # For plugin - https://github.com/Glench/Vim-Jinja2-Syntax
-
-        jinjaOperator      { Operator } ,
-        jinjaTagBlock      { Operator } ,
-        jinjaVarBlock      { Operator } ,
-        jinjaFilter        { Builtin } ,
-        jinjaBlockName     { Builtin } ,
-
-
----------- Plugin: json syntax ------------------------------------------
-        jsonNoise        { Noise } ,
-        jsonBraces       { jsonNoise } ,
-        jsonNull         { Constant } ,
-        jsonKeyword      { Statement } ,
-        jsonKeywordMatch { jsonNoise } ,
-
-        jsonError                { Error } ,
-        jsonNumError             { Error } ,
-        jsonCommentError         { Error } ,
-        jsonSemicolonError       { Error } ,
-        jsonTrailingCommaError   { Error } ,
-        jsonMissingCommaError    { Error } ,
-        jsonStringSQError        { Error } ,
-        jsonNoQuotesError        { Error } ,
-        jsonTripleQuotesError    { Error } ,
-
-        jsonQuote      { jsonNoise } ,
-
----------- Plugin: make syntax ------------------------------------------
-
-        makeCommands   { Operator } ,
-
----------- Plugin: markdown syntax ------------------------------------------
-        -- skipped right now
-        sym("@punctuation.special.markdown") { Keyword } ,
-
----------- Plugin: python syntax ------------------------------------------
-        -- Includes highlights for - https://github.com/vim-python/python-syntax
-
-        pythonBuiltin            { Builtin },
-        pythonDecorator          { Define } ,
-        pythonDecoratorName      { pythonDecorator },
-
-        -- # vim-python/python-syntax plugin
-        pythonFunction          { Function } ,
-        pythonFunctionCall      { pythonFunction } ,
-        pythonDottedName        { pythonDecorator } ,
-        pythonDot               { Noise } ,
-
-        pythonHexNumber      { Float } ,
-        pythonOctNumber      { Float } ,
-        pythonBinNumber      { Float } ,
-
-        pythonNull           { Constant } ,
-        pythonBoolean        { Boolean } ,
-        pythonSingleton      { pythonNull } ,
-        pythonBuiltInFunc    { pythonBuiltin } ,
-        pythonBuiltinObj     { pythonNull } ,
-        pythonBuiltinType    { Structure } ,
-
-        pythonError                { Error } ,
-        pythonIndentError          { pythonError } ,
-        pythonSpaceError           { DiffText } ,
-        pythonUniEscapeError       { pythonError } ,
-        pythonUniRawEscapeError    { pythonError } ,
-        pythonBytesError           { pythonError } ,
-        pythonBytesEscapeError     { pythonError } ,
-        pythonNumberError          { pythonError } ,
-        pythonOctError             { pythonError } ,
-        pythonHexError             { pythonError } ,
-        pythonBinError             { pythonError } ,
-
----------- Plugin: sass syntax ------------------------------------------
-
-        cssStringQ          { String } ,
-        cssFunctionName     { Function } ,
-        sassProperty        { cssProp } ,
-        sassCssAttribute    { cssAttr } ,
-        sassVariable        { cssStringQ } ,
-        sassMixinName       { cssFunctionName } ,
-        sassClass           { cssClassName } ,
-        sassId              { cssIdentifier } ,
 
 ---------- Plugin: startify ------------------------------------------
         -- For plugin - https://github.com/mhinz/vim-startify
@@ -595,27 +483,6 @@ local theme = lush(function(injected_functions)
         StartifyPath      { Comment } ,
         StartifySlash     { Comment } ,
 
----------- Plugin: vim syntax ------------------------------------------
-        -- skipped right now
-
-
----------- Plugin: yaml syntax ------------------------------------------
-        yamlTagHandle              { Identifier } ,
-        yamlTagPrefix              { Identifier } ,
-        yamlReservedDirective      { Error } ,
-        yamlBlockMappingKey        { Statement } ,
-        yamlFlowMappingKey         { Statement } ,
-        yamlKeyValueDelimiter      { Special } ,
-        yamlBool                   { Boolean } ,
-        yamlTimestamp              { Constant } ,
-
----------- Plugin: ycm ------------------------------------------
-        -- For plugin - https://github.com/ycm-core/YouCompleteMe
-        YcmErrorSign       { Error } ,
-        YcmWarningSign     { WarningMsg } ,
-        YcmErrorSection    { DiffDelete } ,
-        YcmWarningSectio   { DiffText } ,
-        YCMInverse         { fg=cyan, gui='bold,underline' } ,
 
     }
     end
