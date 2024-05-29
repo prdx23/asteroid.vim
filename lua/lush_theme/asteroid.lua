@@ -349,7 +349,7 @@ local theme = lush(function(injected_functions)
         sym("@diff.minus") { DiffDelete } ,  -- deleted text (for diff files)
         sym("@diff.delta") { DiffText } ,  -- changed text (for diff files)
 
-        -- sym("@tag") { } ,  -- XML-style tag names (e.g. in XML, HTML, etc.)
+        sym("@tag") { Statement } ,  -- XML-style tag names (e.g. in XML, HTML, etc.)
         sym("@tag.builtin") { Statement } ,  -- XML-style tag names (e.g. HTML5 tags)
         sym("@tag.attribute") { Identifier } ,  -- XML-style tag attributes
         sym("@tag.delimiter") { Comment } ,  -- XML-style tag delimiters

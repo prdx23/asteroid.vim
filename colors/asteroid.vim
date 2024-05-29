@@ -133,6 +133,7 @@ highlight! link Exception Statement
 highlight! link Keyword Statement
 highlight! link Repeat Statement
 highlight! link @punctuation.special.markdown Statement
+highlight! link @tag Statement
 highlight! link @tag.builtin Statement
 highlight StatusLine guifg=#4f5462 guibg=#141415 guisp=NONE blend=NONE gui=NONE
 highlight StatusLineDefault guifg=#111112 guibg=#7dc3bd guisp=NONE blend=NONE gui=NONE
